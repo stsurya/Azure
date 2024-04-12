@@ -13,7 +13,7 @@ Non-relational database won't apply relational schema to the data.
 There are four common types of Non-relational database commonly in use:
 
 **Key-value database:** In which each record consists of a unique key and an associated value, which can be in any format.
-![alt text](key-value-DB.png)
+![alt text](Key-value-DB.png)
 
 **Document Database:** Here it is key-value database, when value is JSON Document.
 ![alt text](Document-DB.png)
