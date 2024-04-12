@@ -1,3 +1,5 @@
+# File Storage
+
 - Files can be stored in local file systems on the hard disk of your personal computer, and on removable media such as USB drives; but in most organizations, important data files are stored centrally in some kind of shared file storage system.
 
 Some common file formats are discussed below:
