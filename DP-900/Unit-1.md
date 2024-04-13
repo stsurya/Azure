@@ -55,4 +55,22 @@ There are four common types of Non-relational database commonly in use:
 **Column amily Database:** which store tabular data comprising rows and columns, but you can divide the columns into groups known as column-families. Each column family holds a set of columns that are logically related together.
 ![alt text](./Images/Column-dB.png)
 
-**Graph databases** which store entities as nodes with links to define relationships between them.
+## **Graph databases** which store entities as nodes with links to define relationships between them.
+
+---
+
+# Transactional Data Processing
+
+Transactional systems are often high-volume, sometimes handling many millions of transactions in a single day. The data being processed has to be accessible very quickly. The work performed by transactional systems is often referred to as Online Transactional Processing (OLTP).
+
+Refer to ACID properties of Databases.
+
+---
+
+# Analytical Data Processing
+
+Analytical data processing typically uses read-only (or read-mostly) systems that store vast volumes of historical data or business metrics.
+
+**Data Lakes:** Data Lakes are common in large scale data processing systems, where a large volumes of file-based data format must be collected and analyzed.
+
+**Data Warehouse:** Data Warehouses are the way to store the data in a relational schema that is optimizied for read queries and to support data visualization.
