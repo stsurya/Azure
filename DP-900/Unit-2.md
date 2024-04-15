@@ -1,6 +1,6 @@
 # Job roles in the world of data
 
-From the last decade, the amount of data is increasing a lot and which is creating a lot of jobs related to data. Few are listed belwo:
+From the last decade, the amount of data is increasing a lot and which is creating a lot of jobs related to data. Few are listed below:
 
 ## Database Administrator:
 
@@ -23,7 +23,9 @@ These are some of the most common data services in azure for modern transactiona
 Azure SQL is the collective name for relational databases solutions. Azure SQL service includes:
 
 **Azure SQL Database:** A fully managed PAAS database in azure. Best for modern cloud applications. Hyperscale and serverless options are available.
+
 **Azure SQL Managed Instance:** A hosted instance with more configuration than Azure SQL Db but come with more responsibilty. Best for most migrations to the cloud. Lift-and-shift ready.
+
 **Azure SQL VM:** A virtual machine with an installation of SQL Server, allowing maximum configurability with full management responsibility. Best for migrations and applications requiring OS-level access. Lift-and-shift ready.
 
 ## Azure Database for open-source relational databases
