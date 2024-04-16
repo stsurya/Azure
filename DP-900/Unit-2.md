@@ -39,3 +39,16 @@ Azure includes managed services for open-source relational databases, including:
 **Azure Database for PostgreSQL:** It's a hybrid relational-object database. IT can store relational data type but it'll also support custom data types with it's non-relational properties.
 
 ## Azure CosmosDB
+
+It is a NoSQL database system that supports multiple application interfaces, enabling you to store and manage the data as JSON documents,key-value pairs,column-families, graph.
+
+## Azure Storage
+
+Azure storage is a core azure service which enables you to store data in
+**Blob Containers:** scalable, cost-effective storage for binary files.
+**File Shares:** network file shares such as you typically find in corporate networks.
+**Tables:** to store key-value data to read and write quickly.
+
+## Azure Data Factory
+
+It's used to build, extract and load the data to transfer and transform.
