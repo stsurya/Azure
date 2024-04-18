@@ -15,7 +15,7 @@ az sql server ad-admin create --resource-group $(ResourceGroupName) --server-nam
 ### Grant SQL Database access to user-assigned MI
 
 **Authentication type:** Active Directory - Password
-Belwo SQL Script need to be run on the database
+**Below SQL Script need to be run on the database**
 
 ```
 CREATE USER [$(<User-Managed-Identity>)] FROM EXTERNAL PROVIDER
@@ -26,6 +26,24 @@ ALTER ROLE db_ddladmin ADD MEMBER [$(<User-Managed-Identity>)]
 
 Grant view any column master key definition to [$(<User-Managed-Identity>)]
 Grant view any column encryption key definition to [$(<User-Managed-Identity>)]
+```
+
+**Below SQL Script is to check the access of USer Assigned MI on Database**
+
+```
+SELECT r.name role_principal_name, m.name AS member_principal_name
+
+FROM sys.database_role_members rm
+
+JOIN sys.database_principals r
+
+    ON rm.role_principal_id = r.principal_id
+
+JOIN sys.database_principals m
+
+    ON rm.member_principal_id = m.principal_id
+
+where m.name = '<User-Assigned-MI>'
 ```
 
 ### Creating CMK and CEK Subscriber keys in Databsae
