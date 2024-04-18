@@ -92,5 +92,11 @@ $CEK = New-SqlColumnEncryptionKey -Name $CEKName -InputObject $Database -ColumnM
 Write-Host "Column Encryption Key created and bound to Column Master Key."
 ```
 
-To switch to the subscription on Azure CloudShell
+**To switch to the subscription on Azure CloudShell**
 `az account set --subscription c56e18b5–23ce-4d2c-ac8c-35d3c9bc7e0f` (use your own subscription id)
+
+**Powershell script to get the PrimaryConnectionString of Eventhub Namespace of RootManageSharedAccessKey**
+
+```
+$eventhubConnString = (Get-AzEventHubKey -ResourceGroupName rg-uks-dev-core -NamespaceName ehubns-uks-dev-trafficdata -AuthorizationRuleName RootManageSharedAccessKey).PrimaryConnectionString
+```
