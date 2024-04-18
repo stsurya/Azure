@@ -91,3 +91,6 @@ $CEKName = "CEK_Subscriber"
 $CEK = New-SqlColumnEncryptionKey -Name $CEKName -InputObject $Database -ColumnMasterKey $CMKName -KeyVaultAccessToken $KeyVaultAccessToken
 Write-Host "Column Encryption Key created and bound to Column Master Key."
 ```
+
+To switch to the subscription on Azure CloudShell
+`az account set --subscription c56e18b5–23ce-4d2c-ac8c-35d3c9bc7e0f` (use your own subscription id)
