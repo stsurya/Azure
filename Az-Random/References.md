@@ -1,6 +1,8 @@
 ### KeyVault Secrets references in FunctionApps, LogicApps, WebApps
 
+```
 @Microsoft.KeyVault(SecretUri=https://<KeyVaultName>.vault.azure.net/secrets/PasswordName)
+```
 
 ### Managed Identity to connect between storage account and function app. In function app configs you need to give Endpoints of storage account.
 
