@@ -10,6 +10,8 @@ entity - table
 instance - row
 attribute - column
 
+---
+
 # Normalization
 
 - Normalization is a term used by database professionals to reduce the data duplication and enforced the data integrity. There are many complex rules that define the process of refactoring data into various levels (or forms) of normalization, a simple definition for practical purposes is
@@ -30,3 +32,15 @@ Now let's look at the way how normalization changes the way of storing the data
 - Each entity has been seperated into it's own table and each attriubute of entities are seperated into it's own column.
 - Each row or instance had own unique ID which is primary key.
 - Where one entity referencing another will sotre primary key as foreign key.
+
+---
+
+# SQL
+
+- Structured Query Language is the language used to communicate with relational databases. You can use SL statements like SELECT, UPDATE, INSERT, CREATE, DROP and DELETE to perform almost all operations related to databases.
+
+## SQL Statements types
+
+- Data Definition Language(DDL)
+- Data Control Language(DCL)
+- Data Manipulation Language(DML)

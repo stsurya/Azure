@@ -100,3 +100,9 @@ Write-Host "Column Encryption Key created and bound to Column Master Key."
 ```
 $eventhubConnString = (Get-AzEventHubKey -ResourceGroupName rg-uks-dev-core -NamespaceName ehubns-uks-dev-trafficdata -AuthorizationRuleName RootManageSharedAccessKey).PrimaryConnectionString
 ```
+
+### To keep the stages manual in azure devops YAML pipeline.
+
+```
+condition: eq(variables['Build.Reason'], 'Manual')
+```

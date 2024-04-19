@@ -14,6 +14,8 @@ They manage infrastructure and processes for data integration across the organiz
 
 They explore and analyze the data to create visualizations and charts that enable organizations to make infromed decisions.
 
+---
+
 # Data services in azure
 
 These are some of the most common data services in azure for modern transactional and analytical solutions.
