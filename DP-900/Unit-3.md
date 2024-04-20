@@ -6,9 +6,9 @@
 - The main advantage of relational database is Tables, which are the most efficient of intuitive, storing and retriving information.
 - Relational tables are format for strucutred data, and each row in a table has the same columns; though in somecases, not all columns need to have value, some can be NULL, like MiddleNAme e.t.c.
 
-entity - table.
-instance - row.
-attribute - column.
+- entity - table.
+- instance - row.
+- attribute - column.
 
 ---
 
@@ -18,8 +18,8 @@ attribute - column.
 
 - Seperate each entity into it's own table.
 - Seperate each discrete attribute into each own column.
-- Use Primary Key to uniquely identify each rwo.
-- USe foreign key colums to kink entities.
+- Use Primary Key to uniquely identify each row.
+- Use foreign key columns to kink entities.
 
 **Example** - See the below un-normalized data
 ![alt text](./Images/unnormalized-data.png)

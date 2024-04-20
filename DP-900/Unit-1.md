@@ -32,7 +32,7 @@ Some common file formats are discussed below:
 
 ---
 
-# Databses
+# Databases
 
 A database is a central system, where data can be stored and queried.
 
@@ -52,10 +52,10 @@ There are four common types of Non-relational database commonly in use:
 **Document Database:** Here it is key-value database, when value is JSON Document.
 ![alt text](./Images/Document-DB.png)
 
-**Column amily Database:** which store tabular data comprising rows and columns, but you can divide the columns into groups known as column-families. Each column family holds a set of columns that are logically related together.
+**Column family Database:** which store tabular data comprising rows and columns, but you can divide the columns into groups known as column-families. Each column family holds a set of columns that are logically related together.
 ![alt text](./Images/Column-dB.png)
 
-## **Graph databases** which store entities as nodes with links to define relationships between them.
+**Graph databases** which store entities as nodes with links to define relationships between them.
 
 ---
 

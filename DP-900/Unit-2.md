@@ -47,10 +47,13 @@ It is a NoSQL database system that supports multiple application interfaces, ena
 ## Azure Storage
 
 Azure storage is a core azure service which enables you to store data in
-**Blob Containers:** scalable, cost-effective storage for binary files.
-**File Shares:** network file shares such as you typically find in corporate networks.
-**Tables:** to store key-value data to read and write quickly.
+
+- **Blob Containers:** scalable, cost-effective storage for binary files.
+- **File Shares:** network file shares such as you typically find in corporate networks.
+- **Tables:** to store key-value data to read and write quickly.
 
 ## Azure Data Factory
 
 It's used to build, extract and load the data to transfer and transform.
+
+There are few more services as well.
