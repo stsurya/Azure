@@ -44,3 +44,35 @@ Now let's look at the way how normalization changes the way of storing the data
 - Data Definition Language(DDL)
 - Data Control Language(DCL)
 - Data Manipulation Language(DML)
+
+## Data Definition Language:
+
+You use DDL statements to create, modify, and remove tables and other objects in a database. The most common commands are CREATE, ALTER, DROP, RENAME.
+
+## Data Control Language
+
+Database admins will generally use this language to grant permission to users and spceific groups. GRANT, DENY, REVOKE are most common commands.
+
+## Data Manipulation Language
+
+You use DML to change the rows in the tables. SELECT, UPDATE, INSERT, DELETE are most common commands.
+
+---
+
+# Describe database objects
+
+Relational databses had few more structure to store the data other than tables, they're view, stored procedure, index.
+
+## What is View ?
+
+A View is virtual table based on the results of your SELECT query. you can think view is something like specified rows in one or more underlying areas.
+
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+## What is stored Procedure ?
+
+A stored procedure is just prepared SQL code. If you've SQL query that you need to write over again and again, save it as stored procedure and just call it to execute.
+
+## What is an index?
+
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
