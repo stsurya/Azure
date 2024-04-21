@@ -106,3 +106,10 @@ $eventhubConnString = (Get-AzEventHubKey -ResourceGroupName rg-uks-dev-core -Nam
 ```
 condition: eq(variables['Build.Reason'], 'Manual')
 ```
+
+### Fetching the IP of Microsoft-Hosted Agents
+
+```
+$IP= Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
+$IP
+```
