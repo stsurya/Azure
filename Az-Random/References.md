@@ -125,3 +125,31 @@ $Code = (Invoke-AzResourceAction -ResourceId "$Id/functions/<functionname>" -Act
 
 $FuncURL = "https://$url/api/<functionname>?code=$Code"
 ```
+
+### Powershell to Fetch access key of event grid
+
+```
+(Get-AzEventGridTopicKey -ResourceGroup <ResourceGroup> -Name <EventGridName>).key1
+```
+
+### Powershell to Fetch System Assigned Identity of Azure resource.
+
+```
+(Get-AzADServicePrincipal -DisplayName '<ResourceName>').Id
+```
+
+### Powershell to fetch SAS token for storage account
+
+```
+$account_key = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $StorageAccountName)[0].Value
+$context = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $account_key
+$CommonStorageAccSASToken = New-AzStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwlup" -Context $context -ExpiryTime 2024-08-22
+```
+
+### Powershell to fetch connection stirng of storage account
+
+```
+$account_key = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $StorageAccountName)[0].Value
+$context = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $account_key
+$CommonStorageAccSASToken = New-AzStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwlup" -Context $context -ExpiryTime 2024-08-22
+```
