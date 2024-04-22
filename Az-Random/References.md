@@ -93,7 +93,7 @@ Write-Host "Column Encryption Key created and bound to Column Master Key."
 ```
 
 **To switch to the subscription on Azure CloudShell**
-`az account set --subscription c56e18b5–23ce-4d2c-ac8c-35d3c9bc7e0f` (use your own subscription id)
+`az account set --subscription 6de23055-fc3a-4da6-a2de-fd4239c22fa7` (use your own subscription id)
 
 **Powershell script to get the PrimaryConnectionString of Eventhub Namespace of RootManageSharedAccessKey**
 
@@ -112,4 +112,16 @@ condition: eq(variables['Build.Reason'], 'Manual')
 ```
 $IP= Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
 $IP
+```
+
+### Fetching the Function app function URL in Azure.
+
+```
+$FunctionAppName = "fa-uks-dev-charmFeedCollector"
+$GroupName = "rg-uks-dev-core"
+$Id = (Get-AzFunctionApp -ResourceGroupName $GroupName -Name $FunctionAppName).Id
+$url = (Get-AzWebApp -ResourceGroupName $GroupName -Name $FunctionAppName).EnabledHostNames[0]
+$Code = (Invoke-AzResourceAction -ResourceId "$Id/functions/VmsOutputToCharmFunction" -Action listkeys -Force).default
+
+$FuncURL = "https://$url/api/VmsOutputToCharmFunction?code=$Code"
 ```
