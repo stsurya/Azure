@@ -117,11 +117,11 @@ $IP
 ### Fetching the Function app function URL in Azure.
 
 ```
-$FunctionAppName = "fa-uks-dev-charmFeedCollector"
-$GroupName = "rg-uks-dev-core"
+$FunctionAppName = "<FuncApp Name>"
+$GroupName = "<resource grp name>"
 $Id = (Get-AzFunctionApp -ResourceGroupName $GroupName -Name $FunctionAppName).Id
 $url = (Get-AzWebApp -ResourceGroupName $GroupName -Name $FunctionAppName).EnabledHostNames[0]
-$Code = (Invoke-AzResourceAction -ResourceId "$Id/functions/VmsOutputToCharmFunction" -Action listkeys -Force).default
+$Code = (Invoke-AzResourceAction -ResourceId "$Id/functions/<functionname>" -Action listkeys -Force).default
 
-$FuncURL = "https://$url/api/VmsOutputToCharmFunction?code=$Code"
+$FuncURL = "https://$url/api/<functionname>?code=$Code"
 ```
