@@ -20,6 +20,8 @@ You can create lifecycle management policies for blobs in a storage account to m
 Azure Files is essentially a way to create cloud-based network shares, such as you typically find in on-premises organizations to make documents and other files available to multiple users.
 By hosting file shares in Azure, organizations can eliminate hardware costs and maintenance overhead, and benefit from high availability and scalable cloud storage for files.
 
+---
+
 # Azure Tables
 
 Azure table storage is a NoSQL storage solution that makes use of tables containning key/value data items. Each item is represented by a row that contains columns for the data fields that need to be stored.
