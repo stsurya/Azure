@@ -153,3 +153,57 @@ $storageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName $resourceGroupN
 $storageAccountKey = $storageAccountKeys[0].Value
 $CommonStorageAccConnectionString = "DefaultEndpointsProtocol=https;AccountName=$StorageAccountName;AccountKey=$storageAccountKey;EndpointSuffix=core.windows.net"
 ```
+
+# Compare two KeyVaults and will create an excel
+
+```
+$keyVaults = @('<KeyVaultName01>', '<KeyVaultName02>')
+
+$hashTable = $null
+$hashTable = @{}
+$resourceKey = ''
+
+foreach($keyVaultName in $keyVaults)
+{
+    Write-Host 'Getting secrets from keyvault: ' $keyVaultName
+
+    $secrets = Get-AzKeyVaultSecret -VaultName $keyVaultName
+
+    foreach($secret in $secrets)
+    {
+        $secretName = $secret.Value
+
+        if($hashTable.ContainsKey($secretName) -eq $false)
+        {
+            Write-Host 'Adding new secret to model'
+
+
+            $azureResource = New-Object -TypeName psobject
+            $azureResource | Add-Member -MemberType NoteProperty -Name 'Secret' -Value $secretName
+
+            foreach($v in $keyVaults)
+            {
+                $azureResource | Add-Member -MemberType NoteProperty -Name $v -Value ''
+            }
+
+            $hashTable.add($secretName, $azureResource)
+
+            Write-Host 'New Resource added: ' $secretName
+        }
+
+
+        $azureResource = $hashTable[$secretName]
+        $azureResource.$keyVaultName = 'YES'
+    }
+}
+
+
+$hashTable.GetEnumerator() | sort name
+$resourceList = [System.Collections.ArrayList]::new();
+foreach($val in $hashTable.Values)
+{
+    $resourceList.Add($val)
+}
+
+$resourceList | Export-Csv -Path C:\Temp\KeyVaultSecretMatrix.csv
+```
