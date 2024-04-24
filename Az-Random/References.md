@@ -146,10 +146,10 @@ $context = New-AzStorageContext -StorageAccountName $StorageAccountName -Storage
 $CommonStorageAccSASToken = New-AzStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwlup" -Context $context -ExpiryTime 2024-08-22
 ```
 
-### Powershell to fetch connection stirng of storage account
+### Powershell to fetch connection string of storage account
 
 ```
-$account_key = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $StorageAccountName)[0].Value
-$context = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $account_key
-$CommonStorageAccSASToken = New-AzStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwlup" -Context $context -ExpiryTime 2024-08-22
+$storageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -AccountName $StorageAccountName
+$storageAccountKey = $storageAccountKeys[0].Value
+$CommonStorageAccConnectionString = "DefaultEndpointsProtocol=https;AccountName=$StorageAccountName;AccountKey=$storageAccountKey;EndpointSuffix=core.windows.net"
 ```
