@@ -21,7 +21,7 @@
 
 - A write operation is first committed to the primary location and replicated using LRS. The update is then replicated asynchronously to the secondary region. When data is written to the secondary location, it's also replicated within that location using LRS.
 
-[!Images is missing](./Images/GRS.png)
+![Images is missing](./Images/GRS.png)
 
 ## GZRS (Geo-zone-redundant-storage)
 
@@ -29,4 +29,4 @@
 
 - you can continue to read and write data if an availability zone becomes unavailable or is unrecoverable
 
-[!Images is missing](./Images/GZRS.png)
+![Images is missing](./Images/GZRS.png)
