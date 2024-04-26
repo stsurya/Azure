@@ -46,7 +46,7 @@ JOIN sys.database_principals m
 where m.name = '<User-Assigned-MI>'
 ```
 
-### Creating CMK and CEK Subscriber keys in Databsae
+### Creating CMK and CEK Subscriber keys in Database
 
 ```
 # Define your Key Vault and SQL Server details
