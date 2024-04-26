@@ -171,7 +171,7 @@ foreach($keyVaultName in $keyVaults)
 
     foreach($secret in $secrets)
     {
-        $secretName = $secret.Value
+        $secretName = $secret.Name
 
         if($hashTable.ContainsKey($secretName) -eq $false)
         {
