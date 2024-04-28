@@ -1,4 +1,4 @@
-# LRS Vs ZRS Vs GRS Vs #GZRS
+# LRS Vs ZRS Vs GRS Vs GZRS
 
 ## LRS (Locally redundant storage)
 

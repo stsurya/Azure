@@ -21,8 +21,15 @@ ports are standardized across all network-connected devices, with each port assi
 
 Sure! In computer networking, a port is a communication endpoint that processes and exchanges data between different applications or services. Think of it as a door through which data can enter or leave a device. Ports are identified by unique numbers, ranging from 0 to 65535.
 
-Here's an example to illustrate:
+**Here's an example to illustrate:**
 
 Let's say you have a computer (Computer A) that hosts a web server, and another computer (Computer B) wants to access a webpage hosted on that server. When Computer B sends a request to Computer A for the webpage, it specifies a destination port number in the request. In this case, the destination port number is typically port 80 for HTTP (Hypertext Transfer Protocol) traffic, which is the standard port for web servers.
 
 Computer A, upon receiving the request, checks the destination port number. Since it's port 80, it knows that the request is for the web server. The web server software running on Computer A listens for incoming requests on port 80. It processes the request, retrieves the requested webpage, and sends it back to Computer B.
+
+## Network Security Group in Azure
+
+- Azure NSG is used to filter out the traffic to and from azure resources in the Vnet.
+- NSG will consist of inbound or outbound rules which will allow or deny the traffic.
+- You an define the rule by giving 5 tuples Source, source port, Destination, Destination port, protocol.
+- You associate a nsg on subnet or NIC(incase of VM), one NSG can be associated with multiple subnets.

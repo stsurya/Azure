@@ -12,7 +12,7 @@ Examples:
 - Move uploaded files from an SFTP or FTP server to Azure Storage.
 - Monitor tweets, analyze the sentiment, and create alerts or tasks for items that need review.
 
-**Consumption Logic App** will only supports one workflow in multitenant
+**Consumption Logic App** will only supports one workflow in multitenant.
 **Standard Logic App** will support multiple workflows in single tenant.
 
 ## Logic App Vs Function App
