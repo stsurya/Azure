@@ -207,3 +207,26 @@ foreach($val in $hashTable.Values)
 
 $resourceList | Export-Csv -Path C:\Temp\KeyVaultSecretMatrix.csv
 ```
+
+### Powershell script to update the chrome on microsoft hosted agents to latest version.
+
+```
+# Below line is to get the current version of Chrome.
+$chromeVersion = ((Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo).ProductVersion
+
+Write-Host "Current version before=" $chromeVersion
+
+$theurl = "http://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi"
+
+mkdir c:\tmp
+
+$output = "c:\tmp\chrome.msi"
+
+Invoke-WebRequest -Uri $theurl -OutFile $output -ErrorAction SilentlyContinue
+
+msiexec /q /i c:\tmp\chrome.msi
+
+start-sleep -Seconds 300 # sleep for 5 mins just to allow updates to be processed
+
+Remove-Item -Path c:\tmp\chrome.msi –Force
+```
