@@ -29,3 +29,25 @@ A cloud is a virtual space where users can store their software, applications in
 - **Hybrid Cloud:** Combination of public and private cloud.
 
 - **Multi Cloud:** Some companies use variety of public clouds to suuprt their business.
+
+## Who are direct consumers ?
+
+Direct customers are those who use your applications which is developed in an cloud environment. Tehy don't whether you're susing private cloud or public cloud.
+
+## Who are cloud consumers ?
+
+Cloud consumers are the individuals or groups within a business unit that use the various cloud services provided to get a task done.
+
+## Serverless component in Cloud Computing
+
+Serverless componets allow the building of applications wihtout much worrying about the infrastructure.One can write code without having provision to a server.
+
+## Define microservices
+
+Microservices is the process of creating applications that include code which is independent of each other.
+
+## importance of microservices
+
+- microservice is desgined to serve a specific purpose, so applciation developement is easy.
+- It's easier and faster to make code changes using microservices.
+- They're scalable, hence easy to deploy additional instances.
