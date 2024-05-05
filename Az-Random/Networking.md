@@ -81,3 +81,28 @@ ii) User-Defined routes.
 - Azure Bastion is a fully managed PAAS service that you provision to securely connect to virtual machines via private IP address.
 - Bastion provides secure RDP and SSH connection to all the VM's within the Vnet i.e., provisioned.
 - It supports manual host scaling(no: of concurrent user), it provides avaialibilty zones in some regions.
+
+## Virtual Network
+
+- Azure Virtual Network is a service that provides the fundamental block for creating your private network on azure.
+- It enables the azure resources to securely communicate with each other, to internet and to on-premises.
+- It's similar to you own private network on data center.
+
+### why virtual network ?
+
+- Communication b/w azure resources.
+- Communication to internet, on-prem.
+- Filtering of network traffic.
+- Routing of network traffic.
+
+## Point-to-site VPN:
+
+Established between your azure network and single computer in client network. Each computer that wants to connect with virtual network must configure this connection. This is usefull if you're just getting started with azure or for developers because it come's with less changes or no changes.
+
+## Site-to-Site VPN
+
+Established b/w your on-premises VPN device and an Azure VPN gateway that's deployed in Azure Virtual Network. This connection b/w on-prem network and azure VPN gateway is sent thorugh a tunnel over the internt.
+
+## Express Route
+
+Established between your network and Azure, through an ExpressRoute partner. This connection is private. Traffic doesn't go over the internet.
