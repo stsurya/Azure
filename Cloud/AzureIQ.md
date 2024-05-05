@@ -1,0 +1,7 @@
+## What is the difference b/w Azure files and Azure blob storage ?
+
+Azure blob storage is used storing unstructured data such as images, videos e.t.c where as azure files are traditional file shares accessible via SMB protocol, ideal for migratiating on-premises file servers.
+
+## How can you monitor resources in Azure using Azure Monitor?
+
+Azure monitor collects logs and metrics from resources. you can view dashboards, create, alerts and gain performance and health.

@@ -78,5 +78,7 @@ variable user_names {
     default= ["user1", "user2", "user3"]
 }
 
-out
+output "print_name" {
+    value = [for name in var.user_name: name]
+}
 ```
