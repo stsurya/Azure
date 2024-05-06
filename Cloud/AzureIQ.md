@@ -5,3 +5,5 @@ Azure blob storage is used storing unstructured data such as images, videos e.t.
 ## How can you monitor resources in Azure using Azure Monitor?
 
 Azure monitor collects logs and metrics from resources. you can view dashboards, create, alerts and gain performance and health.
+
+Random test
