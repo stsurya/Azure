@@ -9,5 +9,3 @@ Azure monitor collects logs and metrics from resources. you can view dashboards,
 ## What is Azure AD ?
 
 Azure Active Directory (AD) is a cloud-based identity and access management service. Azure Active Directory comprises a database (directory) that records things like what users there are and who’s allowed to do what, and set of services that enable your employees to sign in (authentication) and access only the IT resources they’re allowed to (authorization).
-
-Adding test on feature2 branch
