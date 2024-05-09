@@ -82,3 +82,17 @@ output "print_name" {
     value = [for name in var.user_name: name]
 }
 ```
+
+## for_each
+
+```
+variable user_names {
+    type = set(string)
+    default= ["user1", "user2", "user3"]
+}
+
+output "print_name" {
+    for_each - var.user_names
+    name = each.value
+}
+```
