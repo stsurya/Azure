@@ -230,3 +230,7 @@ start-sleep -Seconds 300 # sleep for 5 mins just to allow updates to be processe
 
 Remove-Item -Path c:\tmp\chrome.msi –Force
 ```
+
+### checking the connection b/w function app and redis cache
+
+`tcping rc-uks-<env>-SubscriberPortal.redis.cache.windows.net:6380`
