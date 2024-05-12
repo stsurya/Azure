@@ -140,3 +140,8 @@ For example, if a Virtual Machine in a VNET needs to connect to a storage accoun
 The storage account itself won’t possess an internal IP in the VNET but will instead be mapped to the same VNET, allowing the Virtual Machine to take a more direct route while still utilizing the public IP of the storage account but without leaving the Azure backbone or traversing the public internet.
 
 ![Image is not accessible](./Images/ServiceEndPoint.webp)
+
+## difference between ASG and NSG ?
+
+- ASGs are applied to a group of VMs with same tags. ASGs are applied to VMs and are used in conjunction with NSGs.
+- ASGs simplify the manner of applying security rules by grouping VMs that belong to same application tier.
