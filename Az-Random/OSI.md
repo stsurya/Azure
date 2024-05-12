@@ -2,7 +2,7 @@
 
 OSI model breaks down the communication b/w two computers into seven layers. These layers are helpful for Identifying network issues.
 
-[!Image missing](./Images/OSI.png)
+![Image missing](./Images/OSI.png)
 
 Whether it's the one person who can't get his laptop on the internet or website down for thousands of users. This model can help us to narrow down where the problem is and if we're able to figure it out then lot of unnecsaary work can be avoided.
 
