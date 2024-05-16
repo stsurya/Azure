@@ -1,3 +1,12 @@
+CheckList:
+
+- Terraform - modules
+- Azure
+- Azure DevOps
+- Git
+- Linux
+- Containers(optional)
+
 ## What is cloud technology ?
 
 A cloud is a virtual space where users can store their software, applications including services like network, storage, databases and can share thorugh the internet without the restriciton of physical location and also cloud comes with lot of advantages like location independence, scalabilty, reliabiltiy and Better storage.
