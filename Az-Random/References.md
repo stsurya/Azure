@@ -234,3 +234,7 @@ Remove-Item -Path c:\tmp\chrome.msi –Force
 ### checking the connection b/w function app and redis cache
 
 `tcping rc-uks-<env>-SubscriberPortal.redis.cache.windows.net:6380`
+
+### How to hide terminal path while using PowerShell?
+
+`function prompt {"PS >"}`
