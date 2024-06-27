@@ -25,10 +25,3 @@ _To move a virtual machine from one virtual network to another, you must delete 
 ## Costing
 
 Virtual Network in Azure is free of charge. Every subscription can create up to 50 Virtual Networks across all regions. VNET Peering links two virtual networks – either in the same region, or in different regions - and enables you to route traffic between them using private IP addresses (carry a nominal charge). Inbound and outbound traffic is charged at both ends of the peered networks. Network appliances such as VPN Gateway and Application Gateway that are run inside a virtual network are also charged.
-
-**VNet Limit per Subscription:**
-
-Each Azure subscription can create up to 50 VNets across all regions combined. This means that if you have one subscription, you can create a total of 50 VNets, not 50 per region but 50 in total across all the regions where you deploy resources.
-Example:
-
-If you create 20 VNets in the East US region and 15 VNets in the West Europe region, you can only create 15 more VNets in any other regions because your total limit is 50.
