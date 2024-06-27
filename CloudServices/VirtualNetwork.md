@@ -41,3 +41,7 @@ Established between your azure network and single computer in client network. Ea
 - Setting up VPN Gateway in active-active mode is recommended in which both the IPsec tunnels are simultaneously active, with data flowing through both tunnels at the same time.
 - Each Virtual Network can have only on VPN gateway, but we can make multiple connections to on-premises env's.
 - This type of connection is sometimes referred to as a "multi-site" connection.
+
+## Express Route
+
+Established between your network and Azure, through an ExpressRoute partner. This connection is private. Traffic doesn't go over the internet.
