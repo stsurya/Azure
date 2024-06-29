@@ -13,3 +13,8 @@
 
 - ASGs are applied to a group of VMs with same tags. ASGs are applied to VMs and are used in conjunction with NSGs.
 - ASGs simplify the manner of applying security rules by grouping VMs that belong to same application tier.
+
+## What is an NIC ?
+
+- It's a component which will connect the VM or any other service to the Virtual Network. It'll enable the communication b/w the VM and other azure resources.
+- A network interface (NIC) enables an Azure virtual machine (VM) to communicate with internet, Azure, and on-premises resources.
