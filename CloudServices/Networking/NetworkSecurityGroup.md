@@ -8,3 +8,8 @@
 ## What is Network Virtual Appliance (NVA) ?
 
 - A network virtual appliance is a VM that performs network function, such as a firewall or WAN optimization.
+
+## difference between ASG and NSG ?
+
+- ASGs are applied to a group of VMs with same tags. ASGs are applied to VMs and are used in conjunction with NSGs.
+- ASGs simplify the manner of applying security rules by grouping VMs that belong to same application tier.
