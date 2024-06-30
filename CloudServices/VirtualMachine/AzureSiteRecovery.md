@@ -13,3 +13,5 @@ Azure Recovery Services contributes to your BCDR strategy:
 - Scope of Protection: AZs protect against failures within a region, while ASR provides protection against regional disasters.
 - Data Replication: AZs use synchronous replication within the same region, while ASR typically uses asynchronous replication across regions.
 - Use Cases: AZs are used for high availability and low-latency failover within a region. ASR is used for comprehensive disaster recovery planning and compliance across regions.
+
+Azure Site Recovery is billed based on number of instances protected. Every instance that is protected with Azure Site Recovery is free for the first 31 days.

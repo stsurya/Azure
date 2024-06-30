@@ -12,3 +12,4 @@
 - A rebooted update domain is given 30 minutes to recover before maintenance is initiated on a different update domain.
 - Fault domains define the group of virtual machines that share a common power source and network switch. By default, the virtual machines configured within your availability set are separated across up to three fault domains.
 - While placing your virtual machines into an availability set doesn't protect your application from operating system or application-specific failures, it does limit the impact of potential physical hardware failures, network outages, or power interruptions.
+- There's no extra cost for using availability sets, you only pay for each VM instance you create.
