@@ -30,3 +30,11 @@ ii) the type-2, here the hypervisor is installed on the host operating system, h
 - Custom data is made available to the VM during first startup or setup, which is called provisioning.
 - For single VMs, you can't update custom data in the VM model. But for Virtual Machine Scale Sets, you can update custom data.
 - Don't store sensitive data in custom data.
+
+## Availability options for Azure Virtual Machines
+
+- Availability Zones.
+- Virtual Machine Scale Sets.
+- Availibitly Sets.
+- Azure Site Recovery.
+- Load balancer.
