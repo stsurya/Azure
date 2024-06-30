@@ -13,6 +13,8 @@
 
 - ASGs are applied to a group of VMs with same tags. ASGs are applied to VMs and are used in conjunction with NSGs.
 - ASGs simplify the manner of applying security rules by grouping VMs that belong to same application tier.
+- ASGs are used within a NSG to apply a network security rule to a specific workload or group of VMs — defined by ASG worked as being the “network object” & explicit IP addresses are added to this object.
+- Another great use of this is for scalability, creating the virtual machine and assigning the newly created virtual machine to its ASG will provide it with all the NSG rules in place for that specific ASG — zero distribution to your service!
 
 ## What is an NIC ?
 
