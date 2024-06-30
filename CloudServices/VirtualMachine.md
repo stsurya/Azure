@@ -20,5 +20,13 @@ ii) the type-2, here the hypervisor is installed on the host operating system, h
 
 ## User data Vs Custom data
 
-- User data allows you to pass a script or configuration to a VM when it is launched. This script can be used to perform initial setup tasks such as installing software, configuring services, or running custom initialization routines.
-- Custom data is a broader term used to refer to any data that you want to pass to a VM during provisioning. This can include scripts, configuration files, or any other initialization data.
+- User data is a set of scripts or other metadata that's inserted to an Azure virtual machine at provision time.
+- User data is a new version of custom data.
+- User data is persistent. It will be available during the lifetime of the VM.
+- User data can be updated from outside the VM, without stopping or rebooting the VM.
+- If user data isn't added at provision time, you can still add it after provision.
+- User data will not be encrypted, and any process on the VM can query this data. You should not store confidential information in user data.
+
+- Custom data is made available to the VM during first startup or setup, which is called provisioning.
+- For single VMs, you can't update custom data in the VM model. But for Virtual Machine Scale Sets, you can update custom data.
+- Don't store sensitive data in custom data.
