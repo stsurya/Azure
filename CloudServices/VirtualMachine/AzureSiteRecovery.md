@@ -6,3 +6,10 @@ Azure Recovery Services contributes to your BCDR strategy:
 
 - Site Recovery service: Site Recovery helps ensure business continuity by keeping business apps and workloads running during outages. Site Recovery replicates workloads running on physical and virtual machines (VMs) from a primary site to a secondary location. When an outage occurs at your primary site, you fail over to a secondary location, and access apps from there. After the primary location is running again, you can fail back to it.
 - Backup service: The Azure Backup service keeps your data safe and recoverable.
+- Site Recovery contributes to your **business continuity and disaster recovery (BCDR) strategy**, by orchestrating and automating replication of Azure VMs between regions,
+
+**Key Differences b/w Availability Zones and ASR:**
+
+- Scope of Protection: AZs protect against failures within a region, while ASR provides protection against regional disasters.
+- Data Replication: AZs use synchronous replication within the same region, while ASR typically uses asynchronous replication across regions.
+- Use Cases: AZs are used for high availability and low-latency failover within a region. ASR is used for comprehensive disaster recovery planning and compliance across regions.
