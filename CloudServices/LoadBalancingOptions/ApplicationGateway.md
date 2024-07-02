@@ -19,3 +19,22 @@ A Standard_v2 Application Gateway can span multiple Availability Zones, offering
 ### Secure Sockets Layer (SSL/TLS) termination
 
 Application Gateway will support SSL/TLS termination at gateway, after which traffic flow to the servers unencrypted. This feature allows web servers to be unburdened from costly encryption and decryption overhead. But sometimes unencrypted communication to the servers isn't an acceptable option. This can be because of security requirements, compliance requirements, or the application may only accept a secure connection. For these applications, application gateway supports end to end SSL/TLS encryption.
+
+## DeepDive into TLS Termination and End to End TLS
+
+TLS is a standard security technology for establishing encrypted link between a web server and browser. This link ensures that all data passed between the web server and browsers remain private and encrypted. Application gateway supports both TLS termination at the gateway as well as end to end TLS encryption.
+
+### TLS Termination
+
+To configure the TLS/SSL Termination, a certificate must be added to the listener. This allows the Application Gateway to decrypt incoming traffic and encrypt response traffic to the client.
+
+**Advantages of TLS Termination:**
+
+- Improved performance.
+- Better utilization of the backend servers.
+- Intelligent routing.
+- Certificate management
+
+### End-to-end TLS encryption
+
+When configured with end-to-end TLS communication mode, Application Gateway terminates the TLS sessions at the gateway and decrypts user traffic. It then applies the configured rules to select an appropriate backend pool instance to route traffic to. Application Gateway then initiates a new TLS connection to the backend server and re-encrypts data using the backend server's public key certificate before transmitting the request to the backend. Any response from the web server goes through the same process back to the end user. End-to-end TLS is enabled by setting protocol setting in Backend HTTP Setting to HTTPS, which is then applied to a backend pool.
