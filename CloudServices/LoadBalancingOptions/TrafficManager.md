@@ -1,8 +1,8 @@
 ## Traffic Manager
 
 - This is a DNS based traffic load balancer.
-- This service allows you to distribute traffic to your public facing applications across the global Azure regions.
-- Traffic Manager also provides your public endpoints with high availability and quick responsiveness.
+- This service allows you to distribute traffic to your public facing applications across the global Azure region while still providing high availability and quick responsiveness.
+- If you're building a Multi-region application this is the best service for you.
 
 Traffic manager comes with two key benefits:
 
