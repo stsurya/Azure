@@ -10,11 +10,15 @@
 **Consumption Plan:**
 
 Cost: Pay-per-use model, cost-effective for low-frequency or unpredictable workloads. You only pay for the actions executed in your logic apps.
+
 Scalability: Automatic scaling, but may experience cold starts.
+
 Use Cases: Event-driven scenarios, prototyping, development, and non-critical production workloads.
 
 **Standard Plan:**
 
 Cost: Fixed pricing based on provisioned resources, potentially more cost-effective for high-frequency workloads.
+
 Scalability: Manual and auto-scaling with dedicated resources, no cold starts.
+
 Use Cases: High-frequency, mission-critical workloads, enterprise-grade applications, and scenarios requiring predictable performance and advanced features.
