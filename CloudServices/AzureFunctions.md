@@ -12,3 +12,24 @@ Azure Functions is a serverless solution that allowas you to write less code, ma
 ## What is a Cold Start in Azure Function Apps?
 
 A cold start in function app occurs when latency is experienced when a function app is invoked after being idle for sometime. This latency is due to the time it takes to initialize the function's runtime environment and load the necessary application code and dependencies before the function can handle the incoming request.
+
+## Why Does a Cold Start Occur?
+
+**Serverless Architecture:**
+
+- In serverless architectures, resources are dynamically allocated. When a function is invoked, Azure must allocate resources (compute power) and initialize the runtime environment.
+- This resource allocation and initialization process leads to a delay, known as a cold start.
+
+**Idle Periods:**
+
+- If a function has not been invoked for a period of time, Azure may deallocate the resources to optimize costs and resource usage.
+- When the function is triggered again after being idle, Azure needs to reallocate resources and reinitialize the environment, causing a cold start.
+
+**Consumption Plan:**
+
+- The Consumption plan is designed to be cost-effective by scaling out and in dynamically based on the number of incoming requests.
+- This dynamic scaling includes shutting down idle instances, which then require a cold start when invoked again.
+
+**First Invocation:**
+
+- The first time a function is invoked after deployment or redeployment, it will experience a cold start because Azure has to set up the execution environment.
