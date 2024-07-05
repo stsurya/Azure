@@ -1,6 +1,3 @@
-**Consumption Logic App** will only supports one workflow in multitenant.
-**Standard Logic App** will support multiple workflows in single tenant.
-
 ## Logic App Vs Function App
 
 - Functions and logic apps are azure services that enables serverless workloads.
