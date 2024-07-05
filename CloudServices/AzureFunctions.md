@@ -33,3 +33,13 @@ A cold start in function app occurs when latency is experienced when a function 
 **First Invocation:**
 
 - The first time a function is invoked after deployment or redeployment, it will experience a cold start because Azure has to set up the execution environment.
+
+## Mitigating Cold Starts in Azure Function Apps
+
+- **Premium Plan:** Provides pre-warmed instances, meaning your function apps are kept warm and ready to handle requests without delay.
+- **Dedicated (App Service) Plan:** Offers dedicated resources that are always running, thereby avoiding cold starts.
+- **Timer Triggers:** Schedule a timer trigger to periodically invoke a function (e.g., every 5 minutes) to keep the instance warm.
+- **Durable Functions:** Use Durable Functions to maintain a stateful workflow, which can help keep the function app active and reduce cold start occurrences.
+- **Always On:** Ensure the "Always On" setting is enabled in the app settings. This is particularly effective in the App Service Plan, as it keeps the app running and avoids cold starts.
+- **Minimize Dependencies:** Reduce the number of dependencies and optimize the initialization code to speed up the startup process.
+- **Efficient Coding Practices:** Ensure your functions are written efficiently to minimize the time taken during initialization.
