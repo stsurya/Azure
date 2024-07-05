@@ -43,3 +43,7 @@ A cold start in function app occurs when latency is experienced when a function 
 - **Always On:** Ensure the "Always On" setting is enabled in the app settings. This is particularly effective in the App Service Plan, as it keeps the app running and avoids cold starts.
 - **Minimize Dependencies:** Reduce the number of dependencies and optimize the initialization code to speed up the startup process.
 - **Efficient Coding Practices:** Ensure your functions are written efficiently to minimize the time taken during initialization.
+
+## What is the difference between Dedicated and Premium plan in azure functions ?
+
+The Dedicated plan provides more flexibility in terms of infrastructure choices, while the Premium plan offers better compute instances and Virtual Network integration.
