@@ -15,6 +15,8 @@ Scalability: Automatic scaling, but may experience cold starts.
 
 Use Cases: Event-driven scenarios, prototyping, development, and non-critical production workloads.
 
+Consumption plan will only supports one workflow in multitenant.
+
 **Standard Plan:**
 
 Cost: Fixed pricing based on provisioned resources, potentially more cost-effective for high-frequency workloads.
@@ -22,3 +24,5 @@ Cost: Fixed pricing based on provisioned resources, potentially more cost-effect
 Scalability: Manual and auto-scaling with dedicated resources, no cold starts.
 
 Use Cases: High-frequency, mission-critical workloads, enterprise-grade applications, and scenarios requiring predictable performance and advanced features.
+
+Standard Plan will support multiple workflows in single tenant.
