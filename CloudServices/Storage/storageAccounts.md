@@ -12,3 +12,11 @@ Azure Blob Storage is a Microsoft Azure cloud-based object storage solution. It 
 - Hot storage tier: It is ideal for objects that are accessed frequently
 - Cool storage tier: It is optimized for data that are infrequently accessed. This is a less expensive option than the hot storage tier
 - Achieve storage tier: It is optimized for data that is rarely accessed. Mostly used for archiving or backup data. It is the least expensive service. If you want to access data in archive tier first you need to move data into cold tier or hot tier. Data in the archive tier can take up to 15 hours to rehydrate, depending on the priority you specify for the rehydration operation.
+
+**B) Azure Table Storage:**
+Microsoft Azure Table Storage was made to store structured NoSQL data. The storage is very scalable and, at the same time, very cheap to keep data in. However, it set off more expensive when you access files frequently.
+
+- It is used for storing non-relational structured data (also known as structured NoSQL data) in the cloud.
+- It is a key attribute store
+- It is a cost-effective option for the storage of table-like data for applications
+- Instead of using SQL database to store data, you can use Azure table storage in a more cost-effective manner.
