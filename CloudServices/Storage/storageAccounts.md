@@ -41,11 +41,22 @@ Microsoft Azure Table Storage was made to store structured NoSQL data something 
 - Instead of using SQL database to store data, you can use Azure table storage in a more cost-effective manner.
 
 **C) Azure File Storage:**
-Microsoft Azure File storage is a type of Azure service that was designed to support the needs of the Azure VM environment. That storage is, in essence, a network share. You can store files there that can be accessed from different Virtual Machines.
+File Storage is a service in Azure Storage that allows you to store and share files in a hierarchical structure, similar to a file system on a computer. It's designed to support legacy applications that rely on file shares, as well as new applications that need to store and share files in a cloud-based storage solution.
 
-- It allows for the retrieval of files via the server message block protocol.
-- Using file storage, you can mount file shares on Windows, Linux, and Mac-based machines.
-- Here you don’t need to manage file servers.
+Here are some key features of File Storage:
+
+- File shares: Create file shares, similar to network file shares, that can be accessed by multiple users and applications.
+- Directory hierarchy: Organize files in a hierarchical structure, with directories and subdirectories.
+- File access: Access files using standard SMB (Server Message Block) protocol, NFS (Network File System) protocol, or REST API.
+- Security: Control access to files and directories using Azure Active Directory (AAD) authentication and authorization.
+- Data replication: Store data in multiple locations for high availability and redundancy.
+- Scalability: Scale up or down to meet changing storage needs.
+
+Use cases for File Storage include:
+
+- Lift and shift: Migrate on-premises applications to Azure without changing code.
+- File sharing: Share files between users, applications, or organizations.
+- Data archiving: Store infrequently accessed files in a cost-effective manner.
 
 **D) Azure Queue Storage:**
 Queue Storage is a type of storage that is built to connect components of your application. It allows you to build flexible applications with decoupled and independent components that rely on asynchronous message queuing.
