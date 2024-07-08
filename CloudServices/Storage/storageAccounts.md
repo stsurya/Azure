@@ -20,3 +20,10 @@ Microsoft Azure Table Storage was made to store structured NoSQL data. The stora
 - It is a key attribute store
 - It is a cost-effective option for the storage of table-like data for applications
 - Instead of using SQL database to store data, you can use Azure table storage in a more cost-effective manner.
+
+**C) Azure File Storage:**
+Microsoft Azure File storage is a type of Azure service that was designed to support the needs of the Azure VM environment. That storage is, in essence, a network share. You can store files there that can be accessed from different Virtual Machines.
+
+- It allows for the retrieval of files via the server message block protocol.
+- Using file storage, you can mount file shares on Windows, Linux, and Mac-based machines.
+- Here you don’t need to manage file servers.
