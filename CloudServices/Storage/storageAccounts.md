@@ -13,8 +13,14 @@ Azure Blob Storage is a Microsoft Azure cloud-based object storage solution. It 
 - Cool storage tier: It is optimized for data that are infrequently accessed. This is a less expensive option than the hot storage tier
 - Achieve storage tier: It is optimized for data that is rarely accessed. Mostly used for archiving or backup data. It is the least expensive service. If you want to access data in archive tier first you need to move data into cold tier or hot tier. Data in the archive tier can take up to 15 hours to rehydrate, depending on the priority you specify for the rehydration operation.
 
+### Type of blobs:
+
+**1. Block Blobs:** - Composed of blocks (up to 100 MB each) - Ideal for storing large files, such as videos, images, and documents - Each block is independently uploaded and stored, allowing for efficient uploading and downloading - Can be used for data lakes, data archiving, and big data analytics
+**2. Page Blobs:** - Designed for frequent read/write operations - Organized into 512-byte pages - Suitable for virtual machine (VM) disks, databases, and files that require random access - Supports incremental updates, reducing storage costs
+**3. Append Blobs:** - Optimized for append-only operations (e.g., logging, auditing) - New data is added to the end of the blob, without modifying existing data - Useful for storing log files, audit trails, and sensor data - Supports adding new blocks, but not updating or deleting existing ones
+
 **B) Azure Table Storage:**
-Microsoft Azure Table Storage was made to store structured NoSQL data. The storage is very scalable and, at the same time, very cheap to keep data in. However, it set off more expensive when you access files frequently.
+Microsoft Azure Table Storage was made to store structured NoSQL data something like JSON,XML. The storage is very scalable and, at the same time, very cheap to keep data in. However, it set off more expensive when you access files frequently.
 
 - It is used for storing non-relational structured data (also known as structured NoSQL data) in the cloud.
 - It is a key attribute store
