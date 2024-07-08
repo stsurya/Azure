@@ -17,7 +17,20 @@ Azure Blob Storage is a Microsoft Azure cloud-based object storage solution. It 
 
 **1. Block Blobs:** - Composed of blocks (up to 100 MB each) - Ideal for storing large files, such as videos, images, and documents - Each block is independently uploaded and stored, allowing for efficient uploading and downloading - Can be used for data lakes, data archiving, and big data analytics
 **2. Page Blobs:** - Designed for frequent read/write operations - Organized into 512-byte pages - Suitable for virtual machine (VM) disks, databases, and files that require random access - Supports incremental updates, reducing storage costs
-**3. Append Blobs:** - Optimized for append-only operations (e.g., logging, auditing) - New data is added to the end of the blob, without modifying existing data - Useful for storing log files, audit trails, and sensor data - Supports adding new blocks, but not updating or deleting existing ones
+**3. Append Blobs:** - Optimized for append-only operations (e.g., logging, auditing) - New data is added to the end of the blob, without modifying existing data - Useful for storing log files, audit trails, and sensor data - Supports adding new blocks, but not updating or deleting existing ones.
+
+### Blob encryption and security
+
+**Encryption:**
+
+- Server-Side Encryption (SSE): Azure encrypts your blobs automatically when they're uploaded, using 256-bit AES encryption.
+- Client-Side Encryption (CSE): You can encrypt blobs before uploading them to Azure, using libraries like Azure Storage Client Library.
+
+**Key Management:**
+
+- Storage Account Keys: Azure manages storage account keys, used for SSE.
+- Customer-Provided Keys (CPK): You can manage your own encryption keys, used for SSE.
+- Azure Key Vault (AKV): Integrates with Azure Storage for centralized key management.
 
 **B) Azure Table Storage:**
 Microsoft Azure Table Storage was made to store structured NoSQL data something like JSON,XML. The storage is very scalable and, at the same time, very cheap to keep data in. However, it set off more expensive when you access files frequently.
