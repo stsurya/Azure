@@ -11,4 +11,4 @@ Azure Blob Storage is a Microsoft Azure cloud-based object storage solution. It 
   It has different tier levels:
 - Hot storage tier: It is ideal for objects that are accessed frequently
 - Cool storage tier: It is optimized for data that are infrequently accessed. This is a less expensive option than the hot storage tier
-- Achieve storage tier: It is optimized for data that is rarely accessed. Mostly used for archiving or backup data. It is the least expensive service. If you want to access data in archive tier first you need to move data into cold tier or hot tier.
+- Achieve storage tier: It is optimized for data that is rarely accessed. Mostly used for archiving or backup data. It is the least expensive service. If you want to access data in archive tier first you need to move data into cold tier or hot tier. Data in the archive tier can take up to 15 hours to rehydrate, depending on the priority you specify for the rehydration operation.
