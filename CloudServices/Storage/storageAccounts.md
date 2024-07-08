@@ -27,3 +27,11 @@ Microsoft Azure File storage is a type of Azure service that was designed to sup
 - It allows for the retrieval of files via the server message block protocol.
 - Using file storage, you can mount file shares on Windows, Linux, and Mac-based machines.
 - Here you don’t need to manage file servers.
+
+**D) Azure Queue Storage:**
+Queue Storage is a type of storage that is built to connect components of your application. It allows you to build flexible applications with decoupled and independent components that rely on asynchronous message queuing.
+
+- This service used for the storage and retrieval of messages
+- This service is good when you want to decouple components of an application
+- A single message in the queue can be up to 64kb in size
+- You can store millions of messages in the queue
