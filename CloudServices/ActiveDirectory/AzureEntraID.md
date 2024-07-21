@@ -72,14 +72,14 @@ A directory can consist of the following three types of Identites:
 - Create a new VM to be used as a Domain Controller and DNS Server.
 - Change the private IP to static: VM -> Networking -> Click on NIC -> IP Configurations -> IPConfig1 -> Private IP Address Settings.
 - Virtual Network -> Select the Vnet -> DNS Servers -> Select Custom and provide static IP of VM from previous step.
-- Promtoe the VM as Active Directory Domain Controller.
-  a) RDP to VM.
-  b) Server Manager -> Dashboard -> Add Roles and Features -> Next -> Next.
-  c) Check Active Directory Domain Service and DNS -> Next -> Next -> .... -> Finish.
-  d) From Notification in Server Manager Window(Top Right) -> Click on Promote this server to a Domain Controller.
-  e) Select Add a new forest -> Next -> Enter a name for the new domain -> Next, Provide DSRM Password -> Next -> Finish.
-  f) Server Manager -> Tools -> DNS -> Right Click on Server -> Properties -> Forwardes -> Edit -> Delete existing IP -> OK.
+- Promtoe the VM as Active Directory Domain Controller.<br>
+  a) RDP to VM.<br>
+  b) Server Manager -> Dashboard -> Add Roles and Features -> Next -> Next.<br>
+  c) Check Active Directory Domain Service and DNS -> Next -> Next -> .... -> Finish.<br>
+  d) From Notification in Server Manager Window(Top Right) -> Click on Promote this server to a Domain Controller.<br>
+  e) Select Add a new forest -> Next -> Enter a name for the new domain -> Next, Provide DSRM Password -> Next -> Finish.<br>
+  f) Server Manager -> Tools -> DNS -> Right Click on Server -> Properties -> Forwardes -> Edit -> Delete existing IP -> OK.<br>
 
-- Create a new VM and join the Domain Controller(Optional)
-  a) RDP to VM.
+- Create a new VM and join the Domain Controller(Optional)<br>
+  a) RDP to VM.<br>
   b) Server Manager -> local server -> Workgroup -> change -> Domain Name = mydemodomain.local, Provide admin u/p -> Your machine has now joined the domain -> Restart the Machine.
