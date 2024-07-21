@@ -10,4 +10,15 @@
 
 ## you can use azure ad to:
 
--
+- Provide an identity management solution.
+- Manage usres and groups.
+- Enable federation b/w organisations.
+- Identify irregular sing-in activity.
+- configure SSO to cloud based SaaS applications like Office365, DropBox e.t.c
+- Configure access to the on-prem applications.
+- Configure Multi-factor authentication.
+- Extend existing on-prem Active Directory implementations Azure AD.
+
+## Azure AD Editions:
+
+### Free:
