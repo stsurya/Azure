@@ -49,3 +49,13 @@ It extends free edition capabilties. Aditionally, this edition has a Microsoft h
 
 - All Premium P1 features.
 - some other advanced features.
+
+## Managing Active Directories
+
+Directories provide a simple and logical way of grouping identities.
+
+A directory can consist of the following three types of Identites:
+
+- Users added manually to the directory(cloud only Identities)
+- Users synced from existing Active Directory installaitons(On-Prem).
+- Third party accounts
