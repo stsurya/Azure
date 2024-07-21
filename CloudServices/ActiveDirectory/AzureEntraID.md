@@ -22,3 +22,30 @@
 ## Azure AD Editions:
 
 ### Free:
+
+- User and Group Management.
+- Self-Service password change for cloud users.
+- Synchronize with on-prem directories.
+- Get Single Sign-On access across Office365 and thousands of other SaaS applications.
+- End-users are entitled to get single sign-on access for upto 10 applications.
+
+### Basic edition:
+
+It extends free edition capabilties. Aditionally, this edition has a Microsoft high availabilty service level agreement(SLA) uptime of 99.9%. It supports cost reducing features like
+
+- Group-based access management.
+- Self-service password reset for cloud users.
+- Company Branding(Logon Pages/Access Panel Customizaition)
+
+### Premium P1 edition:
+
+- It supports Multi-Factor Authentication.
+- Self-Service Identity and Management Solution.
+- Advanced reports for security and usage information.
+- Dynamic groups and self-service group management.
+- Self-Service password reset with password write-back for on-premises.
+
+### Premium P2 edition:
+
+- All Premium P1 features.
+- some other advanced features.
