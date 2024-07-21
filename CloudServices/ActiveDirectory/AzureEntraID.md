@@ -7,3 +7,7 @@
 - Azure AD is highly scalable and highly available by design. Therefore, organization do not have to maintain related infrastructure or worry about disaster recovery. Running out of 28 data centers around the world with automated failover, you'll have the comfort of knowing that azure ad is highly reliable even if a data center goes down, copies of your directory are stored in atleast two more regionally dispersed data centers and available for instant access.
 - Many applications based on .Net, Java, PHP and e.t.c can use industry standard protocols such as Securtiy Assertion MarkUp Language(SAML) 2.o, and Open ID Connect to integrate the identity management provided by Azure AD into the application logic. Through the support of OAuth 2.o, developers can develop the mobile and web applications that integrate with Microsoft's Identity Platform for cloud authentication and access management.
 - Azure AD provides access to its content via **Rest-Based Graph API**, rather than by LDAP on which Active directory relies.
+
+## you can use azure ad to:
+
+-
