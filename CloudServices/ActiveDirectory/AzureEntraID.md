@@ -80,6 +80,41 @@ A directory can consist of the following three types of Identites:
   e) Select Add a new forest -> Next -> Enter a name for the new domain -> Next, Provide DSRM Password -> Next -> Finish.<br>
   f) Server Manager -> Tools -> DNS -> Right Click on Server -> Properties -> Forwardes -> Edit -> Delete existing IP -> OK.<br>
 
-- Create a new VM and join the Domain Controller(Optional)<br>
+- Create a new VM and join the Domain Controller (Optional)<br>
   a) RDP to VM.<br>
   b) Server Manager -> local server -> Workgroup -> change -> Domain Name = mydemodomain.local, Provide admin u/p -> Your machine has now joined the domain -> Restart the Machine.
+
+## Azure AD Connect Express Installation Walkthrough
+
+- Azure portal -> Active Directory -> Users and Groups -> All users -> + New User -> Username = "abcd@\*.com", Directory Role = Global Admin.
+- Remote login to VM (Primary Domain Controller).
+- Server Manager -> Local Server -> IE Enhanced Security Configuration = Off
+- Add few Users to its Active Directory Users and Groups.
+- Download Azure AD Connect. Navigate to and double-click on AzureADConnect.msi.
+- On the Welcome screen, select the box agreeing to the licensing terms and click Continue.
+- On the Express settings screen, click Use express settings.
+- On the Connect to Azure AD screen, enter the credentials of the Global Admin account you created earlier for your Azure AD. Click Next.
+- On the Connect to AD DS screen, enter the username and password for an enterprise admin account. you can enter the domain part in either NetBios or FQDN format, i.e., FABRIKAM\administrator or fabrikam.com\administrator. Click Next.
+- The Azure AD sign-in configuration page will only show if you did not complete verify your domains.
+- On the Ready to configure screen, click install<br>
+
+  1. Optionally on the Ready to configure page, you can unselect the Start synchronization process as soon as configuration completes checkbox. You should unselect this checkbox if you want to do additional configuration, such as filterting. If you unselect this option, the wizard configures sync but leave the scheduler disabled. It does not run unitl you enable it manullay by rerunning the installation wizard.<br>
+  2. If you have Exchange in your on-premisse Active Directory, then you also have an option to enable Exchange Hybrid deployment. enable this option if you plan to have Exhange mailboxes both in the cloud and on-premises at the same time.<br>
+
+- After the installation has completed, sign off and sign in again before you use Synchronization Service Manager or Synchronization Rule Editor.
+
+**To disable Azure AD sync using Powershell**
+Execure the below powershell script (use global amdin account)
+
+```
+# Specify credential for azure ad connect
+$Msolcred = Get-credential
+
+# Connect to azure ad
+Connect-MsolService -Credential $Msolcred
+# Disable Azure AD sync / Dir Sync
+Set-MsolDirSyncEnabled -EnableDirSync $false
+# confirm AD Connect / Dir Sync disabled
+(Get-msolCompanyInformation).DirectorySynchronizationEnabled
+
+```
