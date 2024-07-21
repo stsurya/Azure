@@ -59,3 +59,9 @@ A directory can consist of the following three types of Identites:
 - Users added manually to the directory(cloud only Identities)
 - Users synced from existing Active Directory installaitons(On-Prem).
 - Third party accounts
+
+### Access control in azure starts from a billing perspective.
+
+- The actual owner of an azure account - is the Account Administrator(AA)
+- Subscritpion are a container for billing, but they also act as a security boundary. Your Azure subscription has a trust relationship with Azure AD, which means that it trusts the directory to authenticate users, serivces and devices.
+- Multiple subscriptions can trust the same directory, but each subscription trust only one directory.
