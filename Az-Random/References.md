@@ -238,3 +238,14 @@ Remove-Item -Path c:\tmp\chrome.msi –Force
 ### How to hide terminal path while using PowerShell?
 
 `function prompt {"PS >"}`
+
+### How to increase the C drive of Windows VM in Azure ?
+
+1. Increase the OS disk on Azure portal for the VM.
+2. Login to the VM and
+   **Open Disk Management:**
+
+- You can do this by right-clicking on the Start menu and selecting Disk Management, or by typing diskmgmt.msc in the Run dialog.
+- In Disk Management, you should see the C: drive with its original size (127 GB) and unallocated space representing the additional disk space you added.
+- Right-click on the C: drive and select Extend Volume.
+- Follow the wizard to extend the C: drive to use the unallocated space, which will increase the partition size up to the full 256 GB.
