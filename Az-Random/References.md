@@ -249,3 +249,31 @@ Remove-Item -Path c:\tmp\chrome.msi –Force
 - In Disk Management, you should see the C: drive with its original size (127 GB) and unallocated space representing the additional disk space you added.
 - Right-click on the C: drive and select Extend Volume.
 - Follow the wizard to extend the C: drive to use the unallocated space, which will increase the partition size up to the full 256 GB.
+
+### How to remove the long path of WSL on vs code ?
+
+1. nano ~/.bashrc
+2. check for variable PS1=
+3. Simplify the path to only show the current directory: Replace \w with \W, which shows only the current directory name instead of the full path.
+   The modified code looks like below:
+
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+```
+
+4. Apply the changes `source ~/.bashrc`
