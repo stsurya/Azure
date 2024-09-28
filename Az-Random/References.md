@@ -239,6 +239,12 @@ Remove-Item -Path c:\tmp\chrome.msi –Force
 
 `function prompt {"PS >"}`
 
+```
+function prompt {
+    "$(Split-Path -Leaf $PWD)> "
+}
+```
+
 ### How to increase the C drive of Windows VM in Azure ?
 
 1. Increase the OS disk on Azure portal for the VM.
