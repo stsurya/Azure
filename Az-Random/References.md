@@ -283,3 +283,11 @@ esac
 ```
 
 4. Apply the changes `source ~/.bashrc`
+
+To check whether azure windows vm in connected to Entra ID or not
+
+`dsregcmd /status`
+
+Or
+
+In Entra ID, click on device and check the device name.
