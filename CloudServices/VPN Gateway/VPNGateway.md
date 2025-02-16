@@ -77,3 +77,11 @@ All gateways and tunnels are active from the Azure side, so the traffic is sprea
 This topology requires two local network gateways and two connections to support the pair of on-premises VPN devices, and BGP is required to allow the two connections to the same on-premises network.
 
 ![Image Missing](./Images/vpn-dual-redundancy-567620af.png)
+
+## Highly Available VNet-to-VNet
+
+The same active-active configuration can also apply to Azure VNet-to-VNet connections. You can create active-active VPN gateways for both virtual networks, and connect them together to form the same full mesh connectivity of four tunnels between the two VNets.
+
+Even though the same topology for cross-premises connectivity requires two connections, the VNet-to-VNet topology only needs one connection for each gateway. Additionally, BGP is optional unless transit routing over the VNet-to-VNet connection is required.
+
+![Image Missing](./Images/vpn-vnet-vnet-92bddb64.png)
