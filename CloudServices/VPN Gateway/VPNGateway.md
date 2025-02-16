@@ -56,3 +56,24 @@ This configuration provides multiple active tunnels from the same Azure VPN gate
 In this configuration, the Azure VPN gateway is still in active-standby mode, so the same failover behavior and brief interruption occurs. But this setup guards against failures or interruptions on your on-premises network and VPN devices.
 
 ![Image Missing](./Images/vpn-multiple-onprem-vpns-61d52189.png)
+
+## Active-active VPN gateways
+
+- Each Azure VPN gateway instance has a **unique public IP** and establishes an **IPsec/IKE S2S VPN tunnel** to the on-premises VPN device.
+- **Two tunnels** exist simultaneously, ensuring high availability.
+- Traffic from Azure to on-premises is **routed through both tunnels**, though the on-premises VPN may prefer one.
+- For **single TCP/UDP flows**, Azure tries to use the same tunnel, but the on-premises network may use different ones.
+- During **planned maintenance or failure**, one tunnel disconnects, and the VPN device automatically removes or updates routes to switch traffic to the active tunnel.
+- **Failover is automatic** on the Azure side, ensuring minimal disruption.
+
+![Image Missing](./Images/vpn-active-active-89241ba7.png)
+
+## Dual-redundancy: active-active VPN gateways for both Azure and on-premises networks
+
+Here you create and set up the Azure VPN gateway in an active-active configuration and create two local network gateways and two connections for your two on-premises VPN devices. The result is a full mesh connectivity of 4 IPsec tunnels between your Azure virtual network and your on-premises network.
+
+All gateways and tunnels are active from the Azure side, so the traffic is spread among all four tunnels simultaneously. By spreading the traffic, you may see slightly better throughput over the IPsec tunnels, the primary goal of this configuration is for high availability. And due to the statistical nature of the spreading, it's difficult to provide the measurement on how different application traffic conditions affects the aggregate throughput.
+
+This topology requires two local network gateways and two connections to support the pair of on-premises VPN devices, and BGP is required to allow the two connections to the same on-premises network.
+
+![Image Missing](./Images/vpn-dual-redundancy-567620af.png)
