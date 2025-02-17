@@ -59,3 +59,34 @@ Azure **ExpressRoute** offers different ways to connect your on-premises network
 - Supports **active/active** redundancy for high availability.
 
 **Analogy:** Like getting an **exclusive VIP highway** straight to Microsoft with no traffic limits.
+
+### **Peering in ExpressRoute**
+
+Peering in **ExpressRoute** is required to define **how traffic flows** between your on-premises network and Microsoft’s cloud services. Without peering, your ExpressRoute circuit is just a connection with **no defined routes** for communication.
+
+### **Purpose of Each Peering Type:**
+
+1. **Azure Private Peering** 🏢🔗☁️
+
+   - Enables **private** connectivity between your **on-premises** network and Azure Virtual Networks (VNets).
+   - Used for **VMs, Azure SQL, Storage accounts (with private endpoints), etc.**
+   - Bypasses the internet, ensuring **low latency and high security**.
+
+2. **Microsoft Peering** 🏢🔗📧
+   - Provides **direct access to Microsoft services like Microsoft 365, Dynamics 365, and Azure PaaS (e.g., Azure Storage, Azure App Service, etc.)**
+   - Uses **public IPs**, but the connection remains private (does not traverse the internet).
+   - Improves **performance** for Microsoft SaaS applications by avoiding congestion on public networks.
+
+### **Why Not Use Just One Peering?**
+
+Each peering type serves a **different use case**.
+
+- If you only need **private connections to Azure VNets**, use **Azure Private Peering**.
+- If you need access to **Microsoft SaaS/PaaS services**, enable **Microsoft Peering**.
+- **Both can be configured on the same ExpressRoute circuit** if needed.
+
+### **Key Benefit of Peering**
+
+✅ **Better security** (No public internet exposure)  
+✅ **Lower latency & higher reliability**  
+✅ **Faster access to Microsoft services**
