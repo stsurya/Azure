@@ -90,3 +90,16 @@ Each peering type serves a **different use case**.
 ✅ **Better security** (No public internet exposure)  
 ✅ **Lower latency & higher reliability**  
 ✅ **Faster access to Microsoft services**
+
+#### **1️⃣ Private Peering (For Azure VNets)**
+
+- Used to **connect on-premises networks to Azure VNets** securely.
+- Works like an **extension of your network into Azure**.
+- Allows **direct communication with VMs and cloud services** using **private IPs**.
+- Supports **multiple VNets** within the same peering setup.
+
+#### **2️⃣ Microsoft Peering (For Microsoft Services)**
+
+- Used to **connect on-premises networks to Microsoft 365 and Azure PaaS** services.
+- Requires a **public IP** (owned by you or your provider).
+- Enables **secure, fast access** to Microsoft cloud services **without using the internet**.
