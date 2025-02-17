@@ -26,5 +26,3 @@ Azure **ExpressRoute** is a service that enables private, dedicated, and high-sp
 - **Disaster Recovery** – Fast and reliable replication to Azure.
 - **Data Migration** – Transfer large amounts of data securely.
 - **Financial & Healthcare Industries** – Organizations that require strict compliance and low latency.
-
-Would you like details on how to set up ExpressRoute in Azure? 🚀
