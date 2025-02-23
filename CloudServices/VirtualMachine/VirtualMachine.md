@@ -38,3 +38,8 @@ ii) the type-2, here the hypervisor is installed on the host operating system, h
 - Availibitly Sets.
 - Azure Site Recovery.
 - Load balancer.
+
+## NIC
+
+- Each VM will be having NIC, when we say a VM is in virtual netowrok, it's not acutally the VM, it's the NIC which is under the Vnet.
+- Multiple NIC's can be attached to single VM. Those NIC's can be from different subnets but not from different Vnets.

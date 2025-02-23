@@ -3,6 +3,7 @@
 - Azure Virtual Network is a service that provides the fundamental block for creating your private network on azure.
 - It enables the azure resources to securely communicate with each other, to internet and to on-premises.
 - It's similar to you own private network on data center.
+- Virtual Network is a regional service. It spans across the availbilty zones but not across regions or subscriptions.
 
 ## why virtual network ?
 
@@ -10,6 +11,33 @@
 - Communication to internet, on-prem.
 - Filtering of network traffic.
 - Routing of network traffic.
+
+## RFC 1918
+
+When you are creating a VNet, use address ranges enumerated in RFC 1918. These addresses are for private, nonroutable address spaces.
+
+10.0.0.0 - 10.255.255.255 (10/8 prefix)
+172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
+192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
+In addition, you can't add the following address ranges.
+
+224.0.0.0/4 (Multicast)
+255.255.255.255/32 (Broadcast)
+127.0.0.0/8 (Loopback)
+169.254.0.0/16 (Link-local)
+168.63.129.16/32 (Internal DNS)
+Azure assigns resources in a virtual network a private IP address from the address space that you provision. For example, if you deploy a VM in a VNet with subnet address space 192.168.1.0/24, the VM is assigned a private IP like 192.168.1.4. Azure reserves the first four and last IP address for a total of five IP addresses within each subnet. These addresses are x.x.x.0-x.x.x.3 and the last address of the subnet.
+
+For example, the IP address range of 192.168.1.0/24 has the following reserved addresses:
+
+192.168.1.0
+192.168.1.1 (Reserved by Azure for the default gateway.)
+192.168.1.2, 192.168.1.3 (Reserved by Azure to map the Azure DNS IPs to the VNet space.)
+192.168.1.255 (Network broadcast address.)
+
+## What is RFC 1918?
+
+RFC 1918 (Request for Comments 1918) is a standard defined by the Internet Engineering Task Force (IETF) that specifies private IP address ranges for use in internal networks. These addresses are not routable on the public internet and are meant for private use within organizations, data centers, and cloud environments.
 
 _Note_
 
@@ -49,3 +77,6 @@ Established between your network and Azure, through an ExpressRoute partner. Thi
 ## What is a subnet ?
 
 A subnet is a range of IP addresses in a Virtual Network. You can divide a Vnet into multiple subnets for security and organisation.
+
+- A subnet with '/29' is always the smallest subnet.s
+- subnets spana across avaialbilty zones.
