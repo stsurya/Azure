@@ -43,3 +43,7 @@ ii) the type-2, here the hypervisor is installed on the host operating system, h
 
 - Each VM will be having NIC, when we say a VM is in virtual netowrok, it's not acutally the VM, it's the NIC which is under the Vnet.
 - Multiple NIC's can be attached to single VM. Those NIC's can be from different subnets but not from different Vnets.
+- In the real world there's a less need for having multiple NIC's. It's useful in physical world(like data centers) but not for software netowkring.
+- A single NIC can have multiple IP address including private and public IP's for same NIC.
+
+- It's possible to brign your own IP to Azure s well.
