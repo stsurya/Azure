@@ -9,6 +9,7 @@ The following diagram illustrates how Azure Route Server works with an SDWAN NVA
 ![Image Missing](./Images/route-server-overview.png)
 
 - Azure Route Server is highly available across the zones.
+- There is no data flow thorugh Route Server, it only knows about the routes, the data will send directly from VM to NVAs.
 
 ### **What is BGP (Border Gateway Protocol)?**
 
