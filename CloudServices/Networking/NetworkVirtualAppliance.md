@@ -13,7 +13,9 @@ A Network Virtual Appliance (NVA) is a virtual machine that performs network fun
 - WAN Optimization – Enhances performance of traffic between Azure and on-prem.
 - Application Load Balancing – Provides advanced Layer 7 load balancing beyond Azure’s native load balancers.
 
-## Step-by-Step Traffic Flow
+Stateful and Stateless NVA's.
+
+## Step-by-Step Traffic Flow in Stateful NVA
 
 1️⃣ User → Web Server (Request)
 
@@ -30,3 +32,17 @@ A Network Virtual Appliance (NVA) is a virtual machine that performs network fun
 3️⃣ NVA → User (Final Delivery)
 
 - The NVA forwards the response to the original User (10.1.0.5).
+
+## Step-by-Step Flow in a Stateless NVA
+
+1️⃣ User → Web Server (Request)
+
+- The User (10.1.0.5) sends a request to the Web Server (20.1.0.10).
+- The request first goes through the Stateless NVA.
+- The NVA checks only the inbound rule and forwards the request to the Web Server.
+
+2️⃣ Web Server → User (Response)
+
+- The Web Server sends a response back to the User.
+- Since the NVA does NOT remember the original request, the response is treated as a new request.
+- If there is no separate rule allowing this return traffic, the response will be blocked.
