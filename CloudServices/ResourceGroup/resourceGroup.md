@@ -1,4 +1,4 @@
-### **🔹 What is a Resource Group in Azure?**
+## **🔹 What is a Resource Group in Azure?**
 
 A **Resource Group (RG)** in Azure is a **logical container** that holds related Azure resources like **Virtual Machines, Storage Accounts, Databases, Networking Components, etc.**
 
