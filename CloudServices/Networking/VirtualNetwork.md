@@ -26,6 +26,7 @@ In addition, you can't add the following address ranges.
 127.0.0.0/8 (Loopback)
 169.254.0.0/16 (Link-local)
 168.63.129.16/32 (Internal DNS)
+
 Azure assigns resources in a virtual network a private IP address from the address space that you provision. For example, if you deploy a VM in a VNet with subnet address space 192.168.1.0/24, the VM is assigned a private IP like 192.168.1.4. Azure reserves the first four and last IP address for a total of five IP addresses within each subnet. These addresses are x.x.x.0-x.x.x.3 and the last address of the subnet.
 
 For example, the IP address range of 192.168.1.0/24 has the following reserved addresses:
@@ -78,5 +79,5 @@ Established between your network and Azure, through an ExpressRoute partner. Thi
 
 A subnet is a range of IP addresses in a Virtual Network. You can divide a Vnet into multiple subnets for security and organisation.
 
-- A subnet with '/29' is always the smallest subnet.s
+- A subnet with '/29' is always the smallest subnets.
 - subnets spana across avaialbilty zones.
