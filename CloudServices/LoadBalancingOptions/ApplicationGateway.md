@@ -28,19 +28,58 @@ A Standard_v2 Application Gateway can span multiple Availability Zones, offering
 
 Application Gateway will support SSL/TLS termination at gateway, after which traffic flow to the servers unencrypted. This feature allows web servers to be unburdened from costly encryption and decryption overhead. But sometimes unencrypted communication to the servers isn't an acceptable option. This can be because of security requirements, compliance requirements, or the application may only accept a secure connection. For these applications, application gateway supports end to end SSL/TLS encryption.
 
-## What is a listener in App Gateway ?
+## 🔍 What Is a Listener in App Gateway ?
 
-A listener is a logical entity that defines how the Application Gateway should listen for incoming traffic. It specifies:<br>
+A **listener** is a logical entity that defines how the Application Gateway should listen for incoming traffic. It specifies:
 
-**Frontend IP address:** The IP address (public or private) where the gateway listens for requests.<br>
+- **Frontend IP address**: The IP address (public or private) where the gateway listens for requests.
+- **Protocol**: HTTP or HTTPS.
+- **Port**: The port number (commonly 80 for HTTP and 443 for HTTPS).
+- **Host name**: Used in multi-site configurations to route traffic based on the host header.
 
-**Protocol:** HTTP or HTTPS.<br>
+When a client sends a request, the listener determines if it matches its configuration and, if so, processes the request accordingly.
 
-**Port:** The port number (commonly 80 for HTTP and 443 for HTTPS).<br>
+---
 
-**Host name:** Used in multi-site configurations to route traffic based on the host header.<br>
+## 🎯 Types of Listeners
 
-When a client sends a request, the listener determines if it matches its configuration and, if so, processes the request accordingly.<br>
+### 1. **Basic Listener**
+
+- **Purpose**: Handles traffic for a single domain.
+- **Configuration**: Listens on a specific IP, port, and protocol without host name differentiation.
+- **Use Case**: Suitable when hosting a single site or application.
+
+### 2. **Multi-site Listener**
+
+- **Purpose**: Allows hosting multiple domains or subdomains on the same Application Gateway.
+- **Configuration**: Differentiates traffic based on the host name in the request.
+- **Use Case**: Ideal for hosting multiple websites or services behind a single gateway.
+
+---
+
+## 🔐 HTTPS and SSL Termination
+
+For HTTPS listeners, you need to associate an SSL certificate. This enables the Application Gateway to decrypt incoming traffic before routing it to the backend. You can manage SSL certificates directly or integrate with Azure Key Vault for secure storage and management.
+
+---
+
+## 🔁 Listener and Routing Rules
+
+Each listener is associated with a **request routing rule** that defines how traffic should be directed:
+
+- **Basic Rule**: Routes all traffic from the listener to a specific backend pool.
+- **Path-based Rule**: Routes traffic based on URL path patterns, allowing for more granular control.
+
+These rules determine which backend pool the traffic should be sent to and can include additional settings like URL path-based routing.
+
+## 🧠 Best Practices
+
+- **Use Multi-site Listeners**: When hosting multiple domains, use multi-site listeners to efficiently manage traffic.
+- **Secure with HTTPS**: Always prefer HTTPS listeners to encrypt traffic between clients and the gateway.
+- **Manage SSL Certificates**: Utilize Azure Key Vault for secure and centralized certificate management.
+- **Monitor Listener Health**: Regularly check listener configurations and associated routing rules to ensure optimal performance.
+
+---
 
 ## DeepDive into TLS Termination and End to End TLS
 
