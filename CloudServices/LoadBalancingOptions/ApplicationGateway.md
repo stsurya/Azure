@@ -48,6 +48,7 @@ When a client sends a request, the listener determines if it matches its configu
 - **Purpose**: Handles traffic for a single domain.
 - **Configuration**: Listens on a specific IP, port, and protocol without host name differentiation.
 - **Use Case**: Suitable when hosting a single site or application.
+- You can't have two listeners with same port and same frontend IP for basic listeners.
 
 ### 2. **Multi-site Listener**
 
