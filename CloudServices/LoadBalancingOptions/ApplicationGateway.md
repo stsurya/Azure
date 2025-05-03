@@ -70,6 +70,7 @@ Each listener is associated with a **request routing rule** that defines how tra
 
 - **Basic Rule**: Routes all traffic from the listener to a specific backend pool.
 - **Path-based Rule**: Routes traffic based on URL path patterns, allowing for more granular control.
+- One Listener can only link with one Rule and vice-versa.
 
 These rules determine which backend pool the traffic should be sent to and can include additional settings like URL path-based routing.
 
