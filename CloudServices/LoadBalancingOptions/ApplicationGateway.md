@@ -4,6 +4,14 @@
 - For example URI path or host headers. For example, you can route traffic based on the incoming URL. So if /images is in the incoming URL, you can route traffic to a specific set of servers (known as a pool) configured for images. If /video is in the URL, that traffic is routed to another pool that's optimized for videos.
   ![Image is missing](./Images/AppGateway.png)
 
+- App Gateway can have either private IP and Public IP nor Public only, cannot have only private IP.
+
+Scenario that I've implemented for app gateway is:
+
+- For non-production env's application should not be publicly accessible but for prod env application should be publicly accessible.
+- So we've two app gateways one for prod env and another for non-prod env.
+- For non-prod env's we've the frontend public IP and attached a NSG on the subnet of app gateway and allowed only our office network ip address to our Virtual Network and blocked everything else.
+
 - We need to use Application Gateway v2 as this is the latest version of App Gateway.
 
 Feature of Application Gateway:
@@ -19,6 +27,20 @@ A Standard_v2 Application Gateway can span multiple Availability Zones, offering
 ### Secure Sockets Layer (SSL/TLS) termination
 
 Application Gateway will support SSL/TLS termination at gateway, after which traffic flow to the servers unencrypted. This feature allows web servers to be unburdened from costly encryption and decryption overhead. But sometimes unencrypted communication to the servers isn't an acceptable option. This can be because of security requirements, compliance requirements, or the application may only accept a secure connection. For these applications, application gateway supports end to end SSL/TLS encryption.
+
+## What is a listener in App Gateway ?
+
+A listener is a logical entity that defines how the Application Gateway should listen for incoming traffic. It specifies:<br>
+
+**Frontend IP address:** The IP address (public or private) where the gateway listens for requests.<br>
+
+**Protocol:** HTTP or HTTPS.<br>
+
+**Port:** The port number (commonly 80 for HTTP and 443 for HTTPS).<br>
+
+**Host name:** Used in multi-site configurations to route traffic based on the host header.<br>
+
+When a client sends a request, the listener determines if it matches its configuration and, if so, processes the request accordingly.<br>
 
 ## DeepDive into TLS Termination and End to End TLS
 
