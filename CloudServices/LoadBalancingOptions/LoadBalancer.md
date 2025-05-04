@@ -38,3 +38,4 @@ An inbound NAT rule forwards incoming traffic sent to frontend IP address and po
 - A load balancer rule can't span two virtual networks. All load balancer frontends and their backend instances must be in a single virtual network.
 - Forwarding IP fragments isn't supported on load-balancing rules. IP fragmentation of UDP and TCP packets isn't supported on load-balancing rules.
 - You can only have one Public Load Balancer (NIC based) and one internal Load Balancer (NIC based) per availability set. However, this constraint doesn't apply to IP-based load balancers.
+- LoadBalancers cannot distribute traffic among the backend pools which are in different regions.
