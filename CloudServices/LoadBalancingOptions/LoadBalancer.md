@@ -6,6 +6,7 @@ These flows are according to configured load-balancing rules and health probes. 
 
 - Basic load balancer have no charge and no SLA.
 - Standard load balancer tier is Regional or Global.
+- The backend pools of Global load balancer should be the standard regional load balancers.
 
 ### FrontEnd IP Configuration
 
@@ -38,4 +39,4 @@ An inbound NAT rule forwards incoming traffic sent to frontend IP address and po
 - A load balancer rule can't span two virtual networks. All load balancer frontends and their backend instances must be in a single virtual network.
 - Forwarding IP fragments isn't supported on load-balancing rules. IP fragmentation of UDP and TCP packets isn't supported on load-balancing rules.
 - You can only have one Public Load Balancer (NIC based) and one internal Load Balancer (NIC based) per availability set. However, this constraint doesn't apply to IP-based load balancers.
-- LoadBalancers cannot distribute traffic among the backend pools which are in different regions.
+- LoadBalancers cannot distribute traffic among the backend pools which are in different regions until and unless your tier is gloabl instead of region.
