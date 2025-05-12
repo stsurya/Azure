@@ -7,7 +7,8 @@
 - Rule Collections group is the important component of Azure Policy where you'll be creating multiple Rule collection Groups and each group can have multiple rules and each group can have priority from 100 to 65,000. Lower the number, higher the priority.
 - Controlling outbound network access is an important part of an overall network security plan, For example, you may want to limit access to web sites.<br>
   Azure firewall can configure:<br>
-  a) **DNAT rules** for forwarding the request on particular port of firewall to another IP and port. All the DNAT rules are processed first.<br>
+  a) **DNAT rules** - All the DNAT rules are processed first. DNAT (Destination Network Address Translation) is a rule type in Azure Firewall that forwards traffic from a public IP to a private IP in your VNet. It's typically used to publish internal services (like VMs or apps) to the internet securely via Azure Firewall.<br>
+  In DNAT rules the destination IP is the Azure firewall IP and Translated IP is the Azure Resource IP address like VM or any other resource.
   b) **Network rules** that define source address, protcola, destination (same NSG). Network rules are prccessed after DNAT rules<br>
   c) **Application rules:** that define Full Qualified Domain Name(FQDNs) that can be accessed from a subnet.<br>
 - Firewall is a managed, cloud-based network secuirty service that protects your Vnet reosurces.
