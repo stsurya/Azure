@@ -14,3 +14,4 @@
 - you can terminate SSL/TLS in premium tier of firewall.
 - integrating with Azure Monitor.
 - By default firewall blocks everything.
+- We can allocate and de-allocate azure firewall by using azure pwoershell scripting, this doesn't stop the billing but it'll be helpfull when migrating the azure firewall from one vnet to another vnet.
