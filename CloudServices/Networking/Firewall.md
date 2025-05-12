@@ -2,11 +2,14 @@
 
 - To create firewall we need to have Firewall policy and AzureFirewallSubnet.
 - Why we need policy is - We'll define all the rules in the policy and we can re-use these policies for different Vnets. We cannot reuse the firewall for different Vnets, but we can re-use policies for different Vnets. Firewall policy can be created in one region and can be used with different firewalls in different regions.
-- Controlling outbound network access is an important part of an overall network security plan, For example, you may want to limit access to web sites.
-  Azure firewall can configure:
-  a) **Application rules:** that define Full Qualified Domain Name(FQDNs) that can be accessed from a subnet.
-  b) **Network rules** that define source address, protcola, destination (same NSG).
-  c) **NAT rules** for forwarding the request on particular port of firewall to another IP and port.
+- We can've parent policy and child policies, parent policy is like common organisation policy and child policy is to overide the parent policies and make it flexible for each environamnet like dev,test, prod.
+- You'll attach only child policy to the Firewall but the rules of parent policy will automatically be implemented ot the firewall.
+- Rule Collections group is the important component of Azure Policy where you'll be creating multiple Rule collection Groups and each group can have multiple rules and each group can have priority from 100 to 65,000. Lower the number, higher the priority.
+- Controlling outbound network access is an important part of an overall network security plan, For example, you may want to limit access to web sites.<br>
+  Azure firewall can configure:<br>
+  a) **Application rules:** that define Full Qualified Domain Name(FQDNs) that can be accessed from a subnet.<br>
+  b) **Network rules** that define source address, protcola, destination (same NSG).<br>
+  c) **NAT rules** for forwarding the request on particular port of firewall to another IP and port.<br>
 - Firewall is a managed, cloud-based network secuirty service that protects your Vnet reosurces.
 - It's highly scalabale and unrestricted scalabilty. It can scale up as much as you need to accomadate the network traffic flow, you don't need to budget for your peak traffic. The more it scales, more you'll pay.
 - Firewall can've multiple IP addresses.
@@ -14,4 +17,4 @@
 - you can terminate SSL/TLS in premium tier of firewall.
 - integrating with Azure Monitor.
 - By default firewall blocks everything.
-- We can allocate and de-allocate azure firewall by using azure pwoershell scripting, this doesn't stop the billing but it'll be helpfull when migrating the azure firewall from one vnet to another vnet.
+- We can allocate and de-allocate azure firewall by using azure powershell scripting, this doesn't stop the billing but it'll be helpfull when migrating the azure firewall from one vnet to another vnet.
