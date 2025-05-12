@@ -9,7 +9,7 @@
   Azure firewall can configure:<br>
   a) **DNAT rules** - All the DNAT rules are processed first. DNAT (Destination Network Address Translation) is a rule type in Azure Firewall that forwards traffic from a public IP to a private IP in your VNet. It's typically used to publish internal services (like VMs or apps) to the internet securely via Azure Firewall.<br>
   In DNAT rules the destination IP is the Azure firewall IP and Translated IP is the Azure Resource IP address like VM or any other resource.<br>
-  b) **Network rules** that define source address, protcols, destination (same NSG). Network rules are prccessed after DNAT rules<br>
+  b) **Network rules** that define source address, protcols, destination (similar to NSG). Network rules are prccessed after DNAT rules<br>
   c) **Application rules:** that define Full Qualified Domain Name(FQDNs) that can be accessed from a subnet.<br>
 - Firewall is a managed, cloud-based network secuirty service that protects your Vnet reosurces.
 - It's highly scalabale and unrestricted scalabilty. It can scale up as much as you need to accomadate the network traffic flow, you don't need to budget for your peak traffic. The more it scales, more you'll pay.
