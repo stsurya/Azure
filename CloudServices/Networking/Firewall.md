@@ -19,7 +19,7 @@
 - By default firewall blocks everything.
 - We can allocate and de-allocate azure firewall by using azure powershell scripting, this doesn't stop the billing but it'll be helpfull when migrating the azure firewall from one vnet to another vnet.
 
-- Threat intelligence based filtering can be enabled for your firewall to alert and block traffic to/from known malicious IP addresses and domains. The IP addresses and domains are sourced from the Microsoft Threat Intelligence feed. You can choose between three settings:<br>
+- Threat intelligence based filtering can be enabled for your firewall to alert and block traffic to/from known malicious IP addresses and domains. The IP addresses and domains are sourced from the Microsoft Threat Intelligence feed. Threat Intelligence is evaluated first, before any DNAT, network, or application rule. You can choose between three settings:<br>
   ● Off - This feature will not be enabled for your firewall<br>
   ● Alert only - You will receive high confidence alerts for traffic going through your firewall to or from known malicious IP addresses and domains<br>
   ● Alert and deny - Traffic will be blocked and you will receive high confidence alerts when traffic attemting to go through your firewall to or from known malicious IP addresses and domains is detected.<br>
