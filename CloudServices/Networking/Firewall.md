@@ -19,7 +19,7 @@
 - integrating with Azure Monitor.
 - By default firewall blocks everything.
 - We can allocate and de-allocate azure firewall by using azure powershell scripting, this doesn't stop the billing but it'll be helpfull when migrating the azure firewall from one vnet to another vnet.
-
+- Azure Firewall uses a public IP to handle external-facing traffic like DNAT and outbound internet traffic. It also has a private IP for internal routing and communication within the VNet. UDRs point to the firewall’s private IP to ensure all traffic flows through it for inspection.
 - Threat intelligence based filtering can be enabled for your firewall to alert and block traffic to/from known malicious IP addresses and domains. The IP addresses and domains are sourced from the Microsoft Threat Intelligence feed. Threat Intelligence is evaluated first, before any DNAT, network, or application rule. You can choose between three settings:<br>
   ● Off - This feature will not be enabled for your firewall<br>
   ● Alert only - You will receive high confidence alerts for traffic going through your firewall to or from known malicious IP addresses and domains<br>
