@@ -1,7 +1,3 @@
-Absolutely, Surya! Here's a well-organized **interview-ready Q\&A-style note** covering **all the topics** you asked in this thread, formatted for quick reference and revision:
-
----
-
 # ✅ **DevOps & Cloud Security Interview Notes – By Surya Teja Chatrathi**
 
 ---
