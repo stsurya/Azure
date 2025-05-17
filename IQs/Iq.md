@@ -120,6 +120,10 @@ If RTO = 2 hrs, system must be back within 2 hrs.
 - Rate limiting & traffic filtering
 - CDN for traffic absorption
 
+---
+
 ### 11. How to prevent DDoS Attack ?
 
-“To prevent DDoS attacks, I use Azure DDoS Protection for automatic mitigation, Application Gateway with WAF for Layer 7 filtering, and implement rate limiting at API level. I also use private endpoints to restrict exposure, monitor traffic using Sentinel, and ensure the system is resilient with auto-scaling and CDN support.”
+To prevent DDoS attacks, I use Azure DDoS Protection for automatic mitigation, Application Gateway with WAF for Layer 7 filtering, and implement rate limiting at API level. I also use private endpoints to restrict exposure, monitor traffic using Sentinel, and ensure the system is resilient with auto-scaling and CDN support.
+
+---
