@@ -23,10 +23,6 @@
 
 ## 4. Expalin Blue-Green Deployment in k8s ?
 
-Certainly, Surya! Here's an **interview-ready explanation** of **Blue-Green Deployment** in Kubernetes, followed by a **practical -based example** 👇
-
----
-
 ### ✅ **What is Blue-Green Deployment in Kubernetes?**
 
 **Blue-Green Deployment** is a release strategy where you run **two environments**—one **live (blue)** and one **idle (green)**—to deploy new versions of an application with **zero downtime and easy rollback**.
@@ -153,5 +149,166 @@ If something goes wrong, revert the selector back to `version: blue`.
 ### 🧠 **Interview Soundbite**:
 
 > “In Kubernetes, I implement blue-green deployments by maintaining two deployments with different labels (e.g., `version: blue` and `version: green`). I switch traffic by updating the service selector. This ensures zero downtime and easy rollback, making it ideal for production releases.”
+
+---
+
+## 5. Explain Canary deployment model in k8s ?
+
+## ✅ What is Canary Deployment in Kubernetes?
+
+**Canary deployment** is a progressive delivery strategy where you **release a new version of your application to a small subset of users** first (like 10%) and **gradually increase the traffic**. This helps test stability in production without impacting all users.
+
+- Safer than full rollout
+- Easy rollback
+- Real traffic validation
+
+---
+
+### 🧠 Interview Soundbite:
+
+> "In Kubernetes, I implement canary deployments by running both old and new versions of the app with different labels. I use weighted traffic distribution using multiple services or tools like Istio, Linkerd, or NGINX Ingress to shift traffic gradually."
+
+---
+
+## 🧪 Basic Example without Service Mesh (using 2 Deployments + 2 Services)
+
+We’ll simulate traffic splitting manually by using two services and controlling access (not true weighted routing but basic canary logic).
+
+---
+
+### 1️⃣ **Stable Deployment (v1)**
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-stable
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: myapp
+        version: stable
+    spec:
+      containers:
+      - name: app
+        image: myapp:v1
+        ports:
+        - containerPort: 80
+```
+
+---
+
+### 2️⃣ **Canary Deployment (v2)**
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: myapp
+        version: canary
+    spec:
+      containers:
+      - name: app
+        image: myapp:v2
+        ports:
+        - containerPort: 80
+```
+
+---
+
+### 3️⃣ **Service for Stable**
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-stable-svc
+spec:
+  selector:
+    app: myapp
+    version: stable
+  ports:
+  - port: 80
+    targetPort: 80
+```
+
+---
+
+### 4️⃣ **Service for Canary**
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-canary-svc
+spec:
+  selector:
+    app: myapp
+    version: canary
+  ports:
+  - port: 80
+    targetPort: 80
+```
+
+---
+
+### ⚙️ How Canary Traffic Works in This Setup
+
+- Route **90% of traffic** to `app-stable-svc`
+- Route **10% of traffic** to `app-canary-svc`
+- You can control this via **DNS**, **Ingress rules**, or **API Gateway** (like NGINX or Istio)
+
+---
+
+## ✅ Advanced (True Canary) with Istio
+
+If you want **real traffic splitting (e.g., 90/10)**, use **Istio’s VirtualService** like this:
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: myapp
+spec:
+  hosts:
+  - myapp.example.com
+  http:
+  - route:
+    - destination:
+        host: myapp
+        subset: stable
+      weight: 90
+    - destination:
+        host: myapp
+        subset: canary
+      weight: 10
+```
+
+This lets Istio split traffic **evenly at the request level**, which is not possible with just Kubernetes Services alone.
+
+---
+
+## 🧼 Rollout Strategy
+
+1. Start with 10% traffic to canary.
+2. Monitor performance/logs/metrics.
+3. Gradually increase to 50%, 100% if stable.
+4. If issues, route 100% back to stable.
 
 ---
