@@ -312,3 +312,7 @@ This lets Istio split traffic **evenly at the request level**, which is not poss
 4. If issues, route 100% back to stable.
 
 ---
+
+## 6. What A/B Testing ?
+
+“A/B testing is a deployment strategy where two versions of an app are run simultaneously in production, and a portion of users is routed to each. It allows us to measure user engagement, performance, and business KPIs to decide which version to promote. In Kubernetes, we can implement this using Istio’s traffic splitting or feature flags with tools like LaunchDarkly.”
