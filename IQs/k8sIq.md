@@ -11,3 +11,12 @@
 ## 2. What are sidecar containers ?
 
 - A SideCar container is the secondary container inside the same pod, which are commonly used for logging, networking and traffic-management purposes without modifying the application code.
+
+## 3. How to save costs on k8s ?
+
+- Right sizing the resources: I define accurate CPU and memory requests/limits for pods based on historical usage.
+- Cluster and Pod Autoscaling: I enable the Cluster Autoscaler to automatically scale node pools based on demand, and configure the Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA) to dynamically adjust workloads based on metrics.
+- use spot instances.
+- Idle reasource cleanup like unused PVC's or namespaces..
+- Schedule based scalings.
+- Cost monitoring tools like azure adivisor and optimize based on metrics.
