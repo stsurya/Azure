@@ -134,7 +134,7 @@ spec:
 
 You can use `kubectl patch`:
 
-```bash
+```
 kubectl patch service web-service -p '{"spec":{"selector":{"app":"web","version":"green"}}}'
 ```
 
@@ -316,3 +316,89 @@ This lets Istio split traffic **evenly at the request level**, which is not poss
 ## 6. What A/B Testing ?
 
 “A/B testing is a deployment strategy where two versions of an app are run simultaneously in production, and a portion of users is routed to each. It allows us to measure user engagement, performance, and business KPIs to decide which version to promote. In Kubernetes, we can implement this using Istio’s traffic splitting or feature flags with tools like LaunchDarkly.”
+
+---
+
+## 📘 What are CRDs in Kubernetes?
+
+### ➤ CRD stands for: **Custom Resource Definition**
+
+CRDs are a way to **extend Kubernetes with your own custom resource types**, just like native ones (`Pods`, `Services`, etc.).
+
+---
+
+## 🧠 Why do CRDs Matter in Tools like Velero?
+
+Velero uses CRDs to define its own **custom resources** like:
+
+- `Backup`
+- `Restore`
+- `Schedule`
+- `BackupStorageLocation`
+- `VolumeSnapshotLocation`
+- `PodVolumeBackup` (Restic)
+- `PodVolumeRestore`
+
+These are **not built-in Kubernetes resources** — they are added when Velero is installed using its CRDs.
+
+---
+
+### 📦 Example:
+
+When you install Velero, these kinds of resources become valid:
+
+```
+kubectl get backups -n velero
+kubectl get restores -n velero
+kubectl get schedules -n velero
+```
+
+These only work **because Velero has registered those CRDs** with the Kubernetes API server.
+
+---
+
+## 🏗️ How CRDs Work
+
+- CRDs register **new resource types** in your Kubernetes cluster.
+- Once created, you can use `kubectl` to create, get, list, describe, and delete your **custom resources**.
+
+---
+
+## 🔍 List Velero CRDs
+
+```
+kubectl get crds | grep velero
+```
+
+You might see:
+
+```
+backups.velero.io
+restores.velero.io
+schedules.velero.io
+backupstoragelocations.velero.io
+volumesnapshotlocations.velero.io
+podvolumebackups.velero.io
+podvolumerestores.velero.io
+```
+
+---
+
+## 📄 View a Specific CRD Definition
+
+```
+kubectl get crd backups.velero.io -o yaml
+```
+
+This shows how the custom resource is structured (like schema, versions, etc.).
+
+---
+
+## ✅ Summary
+
+| Term          | Meaning                                                                         |
+| ------------- | ------------------------------------------------------------------------------- |
+| CRD           | Custom Resource Definition – defines new resource types                         |
+| CR            | Custom Resource – instance of a CRD (e.g., a `Backup` you create)               |
+| Use in Velero | Velero defines CRDs like `Backup`, `Restore`, etc., and works by watching those |
+| Relevance     | Critical for understanding how Velero interacts with Kubernetes                 |
