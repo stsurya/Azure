@@ -319,7 +319,7 @@ This lets Istio split traffic **evenly at the request level**, which is not poss
 
 ---
 
-## 📘 What are CRDs in Kubernetes?
+## 7. What are CRDs in Kubernetes?
 
 ### ➤ CRD stands for: **Custom Resource Definition**
 
