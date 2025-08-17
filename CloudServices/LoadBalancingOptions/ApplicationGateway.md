@@ -83,6 +83,77 @@ These rules determine which backend pool the traffic should be sent to and can i
 
 ---
 
+An **Azure Application Gateway (App Gateway)** is a **Layer 7 (Application Layer) load balancer** in Microsoft Azure. Unlike a traditional load balancer that works at Layer 4 (transport level, TCP/UDP), App Gateway understands **HTTP(S) traffic** and provides advanced routing, security, and performance features for web applications.
+
+---
+
+### 🔹 What It Can Do (Key Features)
+
+1. **Application-level Load Balancing**
+
+   * Distributes incoming web traffic across multiple backend servers (VMs, VMSS, AKS, App Services, etc.).
+   * Works at **HTTP/HTTPS** level, not just IP/Port.
+
+2. **SSL Termination (TLS Offloading)**
+
+   * App Gateway can handle SSL decryption so backend servers don’t need to.
+   * Improves performance and simplifies certificate management.
+
+3. **Path-based Routing**
+
+   * Directs requests based on **URL path**.
+   * Example:
+
+     * `/images/*` → image servers
+     * `/api/*` → API servers
+
+4. **Host-based Routing (Multi-site Hosting)**
+
+   * Routes traffic based on the **domain name (Host header)**.
+   * Example:
+
+     * `shop.example.com` → e-commerce backend
+     * `blog.example.com` → CMS backend
+
+5. **Web Application Firewall (WAF)**
+
+   * Provides **security against OWASP Top 10 threats** like SQL injection, XSS, etc.
+   * Can run in detection or prevention mode.
+
+6. **Autoscaling**
+
+   * Automatically scales based on traffic load.
+   * Handles spikes without manual intervention.
+
+7. **End-to-End SSL**
+
+   * Encrypts traffic not just from client → gateway but also gateway → backend.
+
+8. **Redirection**
+
+   * HTTP → HTTPS redirection
+   * Redirect to different site/URL as needed.
+
+9. **Custom Error Pages**
+
+   * You can configure custom responses instead of generic error pages.
+
+10. **Integration with Azure services**
+
+* Works seamlessly with **App Services, AKS (Kubernetes), VM Scale Sets**, etc.
+
+---
+
+### 🔹 When to Use Azure App Gateway
+
+* You need **advanced HTTP load balancing**.
+* Hosting **multiple web applications/domains** behind a single gateway.
+* Need **WAF for security**.
+* Need **SSL offloading** to reduce server load.
+* Need **URL-based or host-based routing**.
+* Want **autoscaling + high availability** for web workloads.
+
+---
 ## DeepDive into TLS Termination and End to End TLS
 
 TLS is a standard security technology for establishing encrypted link between a web server and browser. This link ensures that all data passed between the web server and browsers remain private and encrypted. Application gateway supports both TLS termination at the gateway as well as end to end TLS encryption.
