@@ -85,3 +85,101 @@ The same active-active configuration can also apply to Azure VNet-to-VNet connec
 Even though the same topology for cross-premises connectivity requires two connections, the VNet-to-VNet topology only needs one connection for each gateway. Additionally, BGP is optional unless transit routing over the VNet-to-VNet connection is required.
 
 ![Image Missing](./Images/vpn-vnet-vnet-92bddb64.png)
+
+
+## Process of connecting site-to-site
+
+## 🔹 Site-to-Site VPN in Azure (On-Prem ↔ Azure)
+
+A **Site-to-Site VPN** connects your on-premises network (like your data center, office, etc.) to Azure Virtual Network (VNet) using a **VPN Gateway** over the internet.
+
+---
+
+### **Step 1: Prerequisites**
+
+1. **On-premises environment:**
+
+   * A VPN device (Firewall, Router, e.g., Cisco ASA, Fortinet, pfSense, etc.)
+   * Public IP for the VPN device (static, not NAT).
+
+2. **Azure:**
+
+   * An Azure subscription.
+   * A Virtual Network (VNet) created in Azure with proper address space.
+   * No overlap between Azure VNet IP range and on-prem network IP range.
+
+---
+
+### **Step 2: Create a Virtual Network in Azure**
+
+1. Go to **Azure Portal → Create a Virtual Network**.
+2. Define:
+
+   * Address space (e.g., `10.1.0.0/16`).
+   * Subnets (create at least one "GatewaySubnet").
+
+   ⚠️ **Important**: The subnet for the gateway must be named `GatewaySubnet`. Example: `10.1.255.0/27`.
+
+---
+
+### **Step 3: Create the VPN Gateway**
+
+1. Go to **Create a Resource → Virtual Network Gateway**.
+2. Provide:
+
+   * Name: e.g., `MyVPNGateway`.
+   * Region: Same as your VNet.
+   * Gateway Type: **VPN**.
+   * VPN Type: **Route-based** (preferred for most scenarios).
+   * SKU: Choose based on throughput needs (e.g., VpnGw1).
+   * Public IP: Create a new one (Azure assigns a static IP).
+
+👉 Deployment may take **30–45 mins**.
+
+---
+
+### **Step 4: Create Local Network Gateway (represents On-prem)**
+
+1. Go to **Create Local Network Gateway**.
+2. Enter:
+
+   * Name: `OnPrem-LNG`.
+   * On-prem VPN device **public IP**.
+   * Address space(s): On-premises LAN IP ranges (e.g., `192.168.0.0/16`).
+
+---
+
+### **Step 5: Create the VPN Connection**
+
+1. Go to **Virtual Network Gateway → Connections → Add**.
+2. Choose:
+
+   * Connection Type: **Site-to-Site (IPsec)**.
+   * Virtual Network Gateway: your Azure gateway.
+   * Local Network Gateway: your on-premises gateway.
+   * Shared Key (PSK): Set a pre-shared key (e.g., `MySecretKey123`).
+
+---
+
+### **Step 6: Configure On-Prem VPN Device**
+
+On your firewall/router:
+
+1. Create an **IPsec tunnel** to Azure VPN Gateway Public IP.
+2. Use the same:
+
+   * Shared key (PSK).
+   * Encryption (IPsec/IKE settings).
+   * Local network = On-prem subnet.
+   * Remote network = Azure VNet subnet.
+
+Azure supports **IKEv2** (IKEv1 also works but v2 is recommended).
+
+---
+
+### **Step 7: Test the Connection**
+
+* In Azure → **Virtual Network Gateway → Connections**, status should show **"Connected"**.
+* Try to ping or RDP between an Azure VM and an on-prem server.
+
+---
