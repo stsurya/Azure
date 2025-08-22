@@ -180,3 +180,7 @@ Web Application Firewall (WAF) is a service that provides centralized protection
 Web applications are increasingly targets of malicious attacks that exploit common known vulnerabilities. Common among these exploits are SQL injection attacks, cross site scripting attacks to name a few. Preventing such attacks in application code can be challenging and may require rigorous maintenance, patching and monitoring at many layers of the application topology
 
 Existing application gateways can be converted to a Web Application Firewall enabled application gateway easily.
+
+## flow of AppGateway
+
+A backend rule is associated with a listener, a backend pool, and backend settings. In the backend settings, if we define port 80, the traffic between the Application Gateway and the backend servers is unencrypted. However, on the listener side, using port 443 ensures that traffic between the client and the Application Gateway is encrypted.
