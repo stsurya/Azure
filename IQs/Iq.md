@@ -291,3 +291,19 @@ Nice—here’s a compact, single-region, **three-tier Azure architecture** that
 * [ ] Regular DR and restore testing within the region.
 
 ---
+
+## What is the difference between an Azure Web App and an Azure Function App? When would you use each?
+
+**Answer:**
+An **Azure Web App** is part of Azure App Service, designed for hosting **long-running web applications, REST APIs, or websites**. It runs continuously, supports custom domains, SSL, deployment slots, and scales up or out based on demand. It’s best suited when I need a **24/7 API or website** that must always be available, such as an e-commerce site, a company portal, or a backend service.
+
+An **Azure Function App**, on the other hand, is a **serverless compute platform**. It runs code **only when triggered** by an event (such as an HTTP request, blob upload, queue message, or timer). It scales automatically and follows a **pay-per-execution** model. Function Apps are ideal for **short-lived, event-driven tasks** like background jobs, file processing, or scheduled jobs.
+
+**In short:**
+
+* I would use a **Web App** when I need a **continuously running web application or API**.
+* I would use a **Function App** when I need **event-driven, serverless workloads** that should run only when triggered.
+
+**Example:** A retail application may run its main storefront and APIs on **Web Apps**, while using **Function Apps** to process images when products are uploaded or to run scheduled inventory sync jobs.
+
+---
