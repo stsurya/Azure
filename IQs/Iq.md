@@ -307,3 +307,24 @@ An **Azure Function App**, on the other hand, is a **serverless compute platform
 **Example:** A retail application may run its main storefront and APIs on **Web Apps**, while using **Function Apps** to process images when products are uploaded or to run scheduled inventory sync jobs.
 
 ---
+
+**Q: What is the difference between Azure Event Hub and Event Grid?**
+
+**Answer:**
+
+* **Azure Event Hub** is a **big data streaming platform**. It’s designed for **high-throughput, low-latency ingestion** of millions of events per second. Event Hub is often used as the front door for **telemetry, logs, IoT data, or application event streams**, which can then be processed by real-time analytics engines like Azure Stream Analytics, Spark, or consumed by downstream systems.
+
+  * Think of Event Hub as a **“data pipeline for continuous event streams.”**
+
+* **Azure Event Grid** is a **fully managed event routing service** that enables **pub/sub communication** between Azure services and custom apps. It reacts to **discrete events** (like “Blob Created” or “VM Deleted”) and routes them in near real-time to subscribers such as Functions, Logic Apps, or Webhooks.
+
+  * Think of Event Grid as a **“reactive notification system for discrete events.”**
+
+---
+
+**When to use what?**
+
+* Use **Event Hub** when you need to **ingest and process large volumes of streaming data** (e.g., IoT telemetry, application logs, clickstreams).
+* Use **Event Grid** when you need to **react to individual events** from Azure services or custom applications (e.g., trigger a Function when a blob is uploaded, or notify a service when a resource is created).
+
+---
