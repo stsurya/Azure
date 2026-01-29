@@ -32,3 +32,10 @@ Azure Connected Machine Resource Adminstrator
 - Azure monitor agent will be installed automatically in the form of extension.
 
 C:\WindowsAzure\Resources\AMADataStore.ExchangeServer\mcs\configchunks - The json file is stored in this location which is DCR.
+
+## Custom logs ingestion
+
+- In DCR by using Xpath queries you can send the required logs to the LAW.
+- Goto Event Viewer on Windows server, select and DNS Server or any other event enable the required logs like Critical, Warning, Verbose, Error, Information.
+-  Click on XML, pick the XML and paste on notepad, remove the tags, pick the only line in DNS Server*![System[(Level=1 or Level=2 or Level=3)]]
+- Goto Azure portal, DCR and psate it in the Xpath query and they'll autmatically reflect in your VM as well, and LAW will start collecting the logs as well.
