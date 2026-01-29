@@ -48,3 +48,6 @@ Total Retention = Interactive Retention + Archive Retention
     - In Analytics plan, the  interactive retention if 30days to 2years, whereas archive retention is 7years.
 
 - The retention period which you're setting at workspace level will by default be inhertied to interactive retention for all the tables. If requires you can manage or modify the retemtion period at each table.
+
+## Deletion of workspace
+- The delete workspace will be stored as soft delete until 14dats, to restore it create a new LAW with same name, so that it can restored.
