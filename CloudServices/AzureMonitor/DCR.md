@@ -30,3 +30,5 @@ Azure Connected Machine Resource Adminstrator
 
 - To deploy Azure Monitor Agent from azure portal, you've to create DCR and then associate the resource with the DCR.
 - Azure monitor agent will be installed automatically in the form of extension.
+
+C:\WindowsAzure\Resources\AMADataStore.ExchangeServer\mcs\configchunks - The json file is stored in this location which is DCR.
