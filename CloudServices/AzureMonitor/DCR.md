@@ -20,3 +20,13 @@
     - Custom JSON.
 
 - Whenever any resource is added to data collection rule, Azure monitor agent is installed automatically.
+
+## Required Permissions
+
+Monitoring Contributor
+Virtual Machine Contributor
+Azure Connected Machine Resource Adminstrator
+- Deploy agent extensions to Azure Arc enabled servers.
+
+- To deploy Azure Monitor Agent from azure portal, you've to create DCR and then associate the resource with the DCR.
+- Azure monitor agent will be installed automatically in the form of extension.
