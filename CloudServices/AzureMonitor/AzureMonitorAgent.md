@@ -13,4 +13,8 @@ challened 2 - Configuration is defined at workspace level. Each agent should hav
 - How to transform the data ? - Data Transfromation should happen before the data ingestion, like deleteing few coulmns before isnerting to LAW.
 - Where to send data ? - LAW
 
-- Azure monitor Agent uses ETL(Extract Transform and Load) data ingestion pipeline
+- Azure monitor Agent uses ETL(Extract Transform and Load) data ingestion pipeline.
+
+## On Linux
+
+Note: Python is required for all the versions of linux for installing and configuring Azure Monitor Agent.
